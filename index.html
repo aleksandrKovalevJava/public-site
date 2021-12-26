@@ -28,12 +28,11 @@
 			fetch("./data.json").then(response => response.json()).then(json => {
 				json.forEach(function(dataJson) {
 					if(dataJson[Object.keys(dataJson)[0]] == certId) {
-					    var pdfData = dataJson[Object.keys(dataJson)[1]];
+						var pdfData = dataJson[Object.keys(dataJson)[1]];
 						if(pdfData.length > 100){
-	                        document.getElementById('pdfIframe').src = "data:application/pdf;base64," + dataJson[Object.keys(dataJson)[1]];
-						    document.getElementById('pdfIframe').style.display = 'flex';
+	                                        	document.getElementById('pdfIframe').src = "data:application/pdf;base64," + pdfData;
+						    	document.getElementById('pdfIframe').style.display = 'flex';
 						}
-// 						document.getElementById("dataByFileId").innerHTML = dataJson[Object.keys(dataJson)[1]];
 					}
 				})
 			})
@@ -53,9 +52,6 @@
     <div id="certId"></div>
 </b>
 <br>
-<label>data by fileId</label> <b>
-    <div id="dataByFileId"></div>
-</b>
 <br>
 <label>secret</label> <b>
     <div id="secret"></div>
