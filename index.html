@@ -1,67 +1,1278 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="uk" prefix="og: http://ogp.me/ns#">
 <head>
-    <meta charset="UTF-8">
-    <title>Text JS</title>
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" async="" src="./inde_files/recaptcha__en.js.download" crossorigin="anonymous"
+            integrity="sha384-wyvEVSrAxo98MJGE0PuR2ri6k5qurqxA2/a+2Rdj2zI1XHJHSGLsoRS5ADozusAM"></script>
+    <script async="" src="./inde_files/scripts"></script>
+    <script type="text/javascript" async="" src="./inde_files/config.js.download"></script>
+    <script type="text/javascript" async="" src="./inde_files/analytics.js.download"></script>
+    <script type="text/javascript" async="" src="./inde_files/events.js.download"></script>
+    <script src="./inde_files/2154012498189474" async=""></script>
+    <script async="" src="./inde_files/fbevents.js.download"></script>
+    <script defer="" src="./inde_files/gtm.js.download"></script>
+    <script defer="">
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.defer = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5DC9CQ');
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
     <script type="text/javascript" src="js/data.json"></script>
     <script type="text/javascript">
-	var encryptedAES = CryptoJS.AES.encrypt("Message", "SecretPassphrase");
-	var decryptedBytes = CryptoJS.AES.decrypt(encryptedAES, "SecretPassphrase");
-	// get full URL and parse pat params: http://localhost:8080/?certId=1&secret=SecretPassphrase
-	var url = new URL(window.location.href);
-	var certId = url.searchParams.get("certId");
-	var secret = url.searchParams.get("secret");
+        var encryptedAES = CryptoJS.AES.encrypt("Message", "SecretPassphrase");
+        var decryptedBytes = CryptoJS.AES.decrypt(encryptedAES, "SecretPassphrase");
+        // get full URL and parse pat params: http://localhost:8080/?certId=1&secret=SecretPassphrase
+        var url = new URL(window.location.href);
+        var certId = url.searchParams.get("certId");
+        var secret = url.searchParams.get("secret");
 
 
-	// update inner HTML
-	window.onload = function() {
-		getJson();
+        // update inner HTML
+        window.onload = function () {
+            getJson();
 
-		function getJson() {
-			document.getElementById("demo3").innerHTML = decryptedBytes.toString(CryptoJS.enc.Utf8);
-			document.getElementById("certId").innerHTML = certId;
-			document.getElementById("secret").innerHTML = secret;
+            function getJson() {
 
-			fetch("./js/data.json").then(response => response.json()).then(json => {
-				json.forEach(function(dataJson) {
-					if(dataJson[Object.keys(dataJson)[0]] == certId) {
-						var pdfData = dataJson[Object.keys(dataJson)[1]];
-						if(pdfData.length > 100){
-	                                        	document.getElementById('pdfIframe').src = "data:application/pdf;base64," + pdfData;
-						    	document.getElementById('pdfIframe').style.display = 'flex';
-						}
-					}
-				})
-			})
-		};
-	}
-	</script>
+                document.getElementById("certId").innerHTML = certId;
+                document.getElementById("secret").innerHTML = secret;
+
+                fetch("./js/data.json").then(response => response.json()).then(json => {
+                    json.forEach(function (dataJson) {
+                        if (dataJson[Object.keys(dataJson)[0]] == certId) {
+                            var pdfData = dataJson[Object.keys(dataJson)[1]];
+                            if (pdfData.length > 100) {
+                                document.getElementById('pdfIframe').src = "data:application/pdf;base64," + pdfData;
+                                document.getElementById('pdfIframe').style.display = 'flex';
+                            }
+                        }
+                    })
+                })
+            };
+        }
+    </script>
+
+    <script defer="">
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2154012498189474');
+    </script>
+    <script defer="">
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject = t;
+            var ttq = w[t] = w[t] || [];
+            ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"], ttq.setAndDefer = function (t, e) {
+                t[e] = function () {
+                    t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+                }
+            };
+            for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+            ttq.instance = function (t) {
+                for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) ttq.setAndDefer(e, ttq.methods[n]);
+                return e
+            }, ttq.load = function (e, n) {
+                var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
+                ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = i, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {};
+                var o = document.createElement("script");
+                o.type = "text/javascript", o.async = !0, o.src = i + "?sdkid=" + e + "&lib=" + t;
+                var a = document.getElementsByTagName("script")[0];
+                a.parentNode.insertBefore(o, a)
+            };
+
+            ttq.load('C6B3KR23RRRB95OG59R0');
+            ttq.page();
+        }(window, document, 'ttq');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <meta name="recaptcha_sitekey" content="6LeEPsMUAAAAACHzo0AOJsiIJjlGLVwsijy6ELKZ">
+    <meta name="csrf-token" content="HN8lbJz5knVj3TO1xYSqTFLBwdMvHQ6TOqeB0NYi">
+    <title>Результати аналізів — медична лабораторія ОН Лаб</title>
+    <meta name="description"
+          content="Перевірити результати лабораторних аналізів і досліджень — медична лабораторія ОН Лаб">
+    <meta name="keywords"
+          content="результати аналізів, лабораторні аналізи, медична лабораторія, отримати результати аналізів">
+    <meta name="image" content="https://onclinic.ua/images/logo_onclinic.png">
+    <meta name="locale" content="ua_UA">
+    <link rel="canonical" href="https://onclinic.ua/test-verification.html">
+    <meta name="robots" content="noindex, follow">
+    <script type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@type": "WebPage"
+    }</script>
+    <link rel="preload" href="./inde_files/placeholders.css" as="style">
+    <link rel="stylesheet" href="./inde_files/placeholders.css">
+    <link rel="stylesheet" href="./inde_files/app.css">
+    <link rel="stylesheet preload" as="style"
+          href="https://fonts.googleapis.com/css?family=PT+Serif|Roboto:400,500&amp;subset=cyrillic,cyrillic-ext,latin-ext&amp;display=swap">
+    <link rel="shortcut icon" href="https://onclinic.ua/favicon.png">
+    <style>[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {
+        display: none;
+    }
+
+    [wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill {
+        from {
+        }
+    }</style>
+    <script type="application/ld+json">{
+        "@context": "https:\/\/schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https:\/\/onclinic.ua",
+                    "name": "\u0413\u043e\u043b\u043e\u0432\u043d\u0430",
+                    "image": null
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@id": "https:\/\/onclinic.ua\/test-verification.html",
+                    "name": "\u041f\u0435\u0440\u0435\u0432\u0456\u0440\u0438\u0442\u0438 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u0438 \u0430\u043d\u0430\u043b\u0456\u0437\u0456\u0432",
+                    "image": null
+                }
+            }
+        ]
+    }</script>
+    <script charset="utf-8" src="./inde_files/identify.js.download"></script>
+    <link rel="stylesheet" href="./inde_files/widget.css">
 </head>
+<body x-data="App()" :class="{
+      &#39;sidebar-open&#39;: $store.app.sidebarOpen,
+      &#39;blurred&#39;: $store.app.formOpen || $store.app.modalOpen,
+      &#39;modal-open&#39;: $store.app.modalOpen,
+      &#39;form-open&#39;: $store.app.formOpen,
+      }" id="layout" class="relative grid">
 
-<body>
-<h1>Hello!</h1>
-<br>
-<label>Actual Message:</label> <b>
-    <div id="demo3"></div>
-</b>
-<br>
-<label>certId:</label> <b>
-    <div id="certId"></div>
-</b>
-<br>
-<br>
-<label>my secret:</label> <b>
-    <div id="secret"></div>
-</b>
-<br>
-<br>
-<iframe id="pdfIframe"
-        style="display: none; width: 100%; height: 800px">
-</iframe>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DC9CQ"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 
+<noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=2154012498189474&ev=PageView&noscript=1"/>
+</noscript>
+<header wire:id="FrQ3hIKGTdvziNlquF1e" x-data="{
+    modalLoaded: window.Livewire.find(&#39;FrQ3hIKGTdvziNlquF1e&#39;).entangle(&#39;modalLoaded&#39;),
+    selectedRepresentative: window.Livewire.find(&#39;FrQ3hIKGTdvziNlquF1e&#39;).entangle(&#39;selectedRepresentative&#39;).defer,
+    showModal() {
+        if(!this.modalLoaded) {
+            this.$wire.loadModal().then(function(){
+                $store.app.modalOpen = &#39;selectClinic&#39;;
+            });
+        } else {
+            $store.app.modalOpen = &#39;selectClinic&#39;
+        }
+    }
+}" x-init="$store.app.selectedRepresentative = selectedRepresentative"
+        class="grid bg-main-blue px-3/4 tablet:px-1 text-white z-20 sticky border-b-1 border-dark-blue box-border text-center px-1 desktop:px-1">
+    <div class="flex items-center">
+        <div @click="$store.app.sidebarOpen = true" class="burger-menu">
+            <img width="1" height="1" src="./inde_files/mobile-icon-menu.svg"
+                 class="w-max-content flex desktop:hidden pr-1">
+        </div>
+        <div class="logo-container">
+            <a href="https://onclinic.ua/">
+                <img width="1" height="1" src="./inde_files/logo-mobile.svg"
+                     class="h-logo-mobile w-auto w-max-content flex desktop:hidden pr-1">
+            </a>
+        </div>
+        <div class="selected-clinic flex items-center flex-wrap hidden tablet:flex">
+            <a role="button" class="font-neosans text-white text-14 leading-1" @click="showModal()">Обрати медичний
+                центр</a>
+        </div>
+    </div>
+    <div class="links flex align-items-center justify-end desktop:-mx-1/4 ">
+        <a href="https://onclinic.ua/news/akcija-na-privivki-ot-grippa"
+           class="items-center border-2 rounded-3 border-olive mx-1/4 px-1/2 desktop:px-1 py-1/4 tablet:py-0 text-3/4 tablet:text-14 tablet:leading-2 leading-1 font-normal tablet:font-medium font-neosans text-white hover:underline">
+            Вакцинація
+        </a>
+        <a href="https://www.tiktok.com/@onclinic.ua?_d=secCgYIASAHKAESMgowBwlu09jEus%2Fyo9bKRJ7n5kvbNcHiTnZw%2FilAFeIGzz6uwgwfNGzHp6urR30yQVR5GgA%3D&amp;language=ru&amp;sec_uid=MS4wLjABAAAAE8o-nhYl-8TGM_e9UQjQhJLFxDal2PO3sVSFINfCV3_a9jTiLI2CTwBQ-Cq9JHVj&amp;sec_user_id=MS4wLjABAAAAuyfcItXAh3SSz21TmgK0coO2chKrrfX6Qc5I-tI-KQAxpZ4CIyeQOKZDar81VKNt&amp;share_app_name=musically&amp;share_author_id=6811085572289332230&amp;share_link_id=746827b1-a326-480b-b683-54f78ffcbdc8&amp;timestamp=1614853713&amp;u_code=dacmfe99114cck&amp;am"
+           target="_blank" class="mx-1/4 hidden desktop:flex">
+            <img width="1" height="1" src="./inde_files/icon-tiktok.svg" alt="">
+        </a>
+        <a href="https://www.instagram.com/onclinic.ua/?hl=ru" target="_blank" class="mx-1/4 hidden desktop:flex">
+            <img width="1" height="1" src="./inde_files/icon-insta.svg" alt="">
+        </a>
+        <a href="https://t.me/onclinic_medycyna_tut" target="_blank" class="mx-1/4 hidden desktop:flex">
+            <img width="1" height="1" src="./inde_files/icon-telegramm.svg" alt="">
+        </a>
+        <a href="https://www.youtube.com/user/onclinicsu" target="_blank" class="mx-1/4 hidden desktop:flex">
+            <img width="1" height="1" src="./inde_files/icon-youtube.svg" alt="">
+        </a>
+        <a href="https://www.facebook.com/onclinic.ua" target="_blank" class="mx-1/4 hidden desktop:flex">
+            <img width="1" height="1" src="./inde_files/icon-facebook.svg" alt="">
+        </a>
+        <a href="https://mycabinet.info/" target="_blank" class="ml-1/4 flex desktop:hidden ">
+            <img width="1" height="1" src="./inde_files/personal-cabinet.svg" alt="">
+        </a>
+    </div>
+</header>
+<aside x-data="" class="block bg-main-blue h-full fixed">
+    <div class="logo-nav">
+        <div class="logo-close place-items-start grid border-b-1 border-dark-blue box-content pr-1/2">
+            <a href="https://onclinic.ua/" aria-label="Головна" class="container-logo hidden desktop:flex pl-1">
+                <img src="./inde_files/logo.svg" width="1" height="1" alt="Logo" loading="lazy">
+            </a>
+            <div class="container-close w-full desktop:hidden">
+                <div @click="$store.app.sidebarOpen = false" class="px-1 block">
+                    <img width="1" height="1" src="./inde_files/close.svg" alt="Закрити" class="w-max-content"
+                         loading="lazy">
+                </div>
+            </div>
+            <a href="https://mycabinet.info/#/auth/login?modal=true&amp;lang=ua"
+               class="flex tablet:px-1 px-1/2 tablet:hidden w-max-content items-center" aria-label="Відеоконсультація"
+               target="_blank">
+<span class="text-14 leading-1 font-normal font-neosans text-white">
+Відеоконсультація
+</span>
+                <img src="./inde_files/icon-video-consultation.svg" width="1" height="1" class="ml-1/2 w-auto"
+                     alt="Відеоконсультація">
+            </a>
+            <a href="https://mycabinet.info/" target="_blank" class="flex tablet:hidden px-1/2"
+               aria-label="Personal cabinet">
+                <img width="1" height="1" src="./inde_files/personal-cabinet.svg" alt="Personal cabinet">
+            </a>
+            <div x-data="{open: false}">
+                <a @click="open = true" role="button" class="select-language">
+<span class="text font-neosans text-light-blue text-3/4">
+Укр
+</span>
+                    <span class="caret"></span>
+                </a>
+                <div x-show.transition="open" @click.outside="open = false"
+                     class="block-language absolute top-2 right-0 bg-white rounded-2 w-1/2" style="display: none;">
+                    <a href="https://onclinic.ua/ru/test-verification.html"
+                       class="block no-underline hover:no-underline w-full px-1/4 py-1/2 font-roboto text-3/4 text-dark-blue hover:bg-dark-blue focus:bg-dark-blue active:bg-dark-blue hover:text-white focus:text-white active:text-white">
+                        Рос
+                    </a>
+                    <a href="https://onclinic.ua/en/test-verification.html"
+                       class="block no-underline hover:no-underline w-full px-1/4 py-1/2 font-roboto text-3/4 text-dark-blue hover:bg-dark-blue focus:bg-dark-blue active:bg-dark-blue hover:text-white focus:text-white active:text-white">
+                        Англ
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav x-data="SidebarNav(&quot;frontend.pages.show&quot;, {&quot;page&quot;:&quot;test-verification&quot;}, &quot;&quot;)">
+            <ul class="list-none mt-0">
+                <li class="hover:bg-menu-hover hidden tablet:block mt-0">
+                    <a href="https://mycabinet.info/" aria-label="Особистий кабінет" target="_blank"
+                       class="no-underline hover:no-underline font-neosans hover:bg-menu-hover flex align-middle content-around text-14 leading-1-1/2 py-1/2 text-white">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                             class="mr-1/2 self-center">
+                            <path d="M9.00013 0.171875C7.25407 0.171875 5.54721 0.689643 4.09542 1.6597C2.64362 2.62976 1.51208 4.00855 0.84389 5.6217C0.1757 7.23485 0.000871316 9.00992 0.341511 10.7224C0.682151 12.4349 1.52296 14.008 2.75761 15.2426C3.99227 16.4773 5.56531 17.3181 7.27782 17.6587C8.99034 17.9994 10.7654 17.8246 12.3786 17.1564C13.9917 16.4882 15.3705 15.3566 16.3406 13.9048C17.3106 12.453 17.8284 10.7462 17.8284 9.00013C17.8284 6.65873 16.8983 4.41323 15.2426 2.75761C13.587 1.10199 11.3415 0.171875 9.00013 0.171875ZM13.0692 12.4833C13.0692 12.8366 12.9288 13.1755 12.6789 13.4253C12.4291 13.6752 12.0902 13.8155 11.7369 13.8155H6.22324C5.87691 13.8051 5.54826 13.6601 5.30703 13.4114C5.06579 13.1627 4.93095 12.8298 4.93111 12.4833V12.2505C4.93171 12.1785 4.95432 12.1084 4.99593 12.0495C5.03753 11.9907 5.09612 11.946 5.16385 11.9215C6.26146 11.5935 7.20618 10.8849 7.82838 9.92308V9.63415C7.48163 9.25939 7.23343 8.80435 7.10607 8.30992C7.02006 8.24598 6.94773 8.16547 6.89334 8.07312C6.83896 7.98078 6.80361 7.87848 6.7894 7.77226C6.77519 7.66604 6.78239 7.55805 6.81059 7.45466C6.83879 7.35127 6.88741 7.25457 6.95358 7.17027V6.07878C6.93641 5.8115 6.97917 5.54375 7.07874 5.29512C7.17832 5.04649 7.33219 4.82324 7.52911 4.64171C7.72603 4.46017 7.96103 4.32492 8.21693 4.24586C8.47282 4.16679 8.74315 4.1459 9.00815 4.18472C10.4367 4.18472 11.0627 4.98728 11.0627 6.07878V7.17027C11.1289 7.25457 11.1775 7.35127 11.2057 7.45466C11.2339 7.55805 11.2411 7.66604 11.2269 7.77226C11.2127 7.87848 11.1774 7.98078 11.123 8.07312C11.0686 8.16547 10.9962 8.24598 10.9102 8.30992C10.7829 8.80435 10.5347 9.25939 10.1879 9.63415V9.92308C10.8081 10.8834 11.7498 11.5918 12.8444 11.9215C12.9122 11.946 12.9708 11.9907 13.0124 12.0495C13.054 12.1084 13.0766 12.1785 13.0772 12.2505L13.0692 12.4833Z"
+                                  fill="white"></path>
+                        </svg>
+                        Особистий кабінет
+                    </a>
+                </li>
+                <li class="hover:bg-menu-hover list-none mt-0">
+                    <a href="https://onclinic.ua/search"
+                       class="no-underline hover:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Пошук
+                    </a>
+                </li>
+                <li class="dropdown mt-0"
+                    :class="{&#39;open&#39;: has_active_item(&#39;dropdown_clinics&#39;) || open === &#39;clinics&#39;}">
+                    <div @click="toggle(&#39;clinics&#39;)"
+                         class="no-underline hover:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Медичні центри
+                    </div>
+                    <ul class="m-0 p-0 relative overflow-hidden transition-all duration-300 max-h-0 list-none"
+                        x-ref="dropdown_clinics"
+                        :style="has_active_item(&#39;dropdown_clinics&#39;) || open === &#39;clinics&#39; ? &#39;max-height: &#39; + $refs.dropdown_clinics.scrollHeight + &#39;px&#39; : &#39;&#39;"
+                        style="">
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.index&#39;)}">
+                            <a href="https://onclinic.ua/ukraine" aria-label="Всі медичні центри"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Всі медичні центри
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;kharkov&#39;)}">
+                            <a href="https://onclinic.ua/kharkov" aria-label="Харків"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Харків
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;sumy&#39;)}">
+                            <a href="https://onclinic.ua/sumy" aria-label="Суми"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Суми
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;poltava&#39;)}">
+                            <a href="https://onclinic.ua/poltava" aria-label="Полтава"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Полтава
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;dnepropetrovsk&#39;)}">
+                            <a href="https://onclinic.ua/dnepropetrovsk" aria-label="Дніпро"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Дніпро
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;odessa&#39;)}">
+                            <a href="https://onclinic.ua/odessa" aria-label="Одеса"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Одеса
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;nikolaev&#39;)}">
+                            <a href="https://onclinic.ua/nikolaev" aria-label="Миколаїв"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Миколаїв
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;mariupol&#39;)}">
+                            <a href="https://onclinic.ua/mariupol" aria-label="Маріуполь"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Маріуполь
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;uzhgorod&#39;)}">
+                            <a href="https://onclinic.ua/uzhgorod" aria-label="Ужгород"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Ужгород
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;belaya-cerkov&#39;)}">
+                            <a href="https://onclinic.ua/belaya-cerkov" aria-label="Біла Церква"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Біла Церква
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;chernigov&#39;)}">
+                            <a href="https://onclinic.ua/chernigov" aria-label="Чернігів"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Чернігів
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;cherkassyi&#39;)}">
+                            <a href="https://onclinic.ua/cherkassyi" aria-label="Черкаси"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Черкаси
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;kropivnickiy&#39;)}">
+                            <a href="https://onclinic.ua/kropivnickiy" aria-label="Кропивницький"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Кропивницький
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown mt-0"
+                    :class="{&#39;open&#39;: has_active_item(&#39;dropdown_childs&#39;) || open === &#39;childs&#39;}">
+                    <div class="font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white"
+                         @click="toggle(&#39;childs&#39;)">Дитячі відділення
+                    </div>
+                    <ul class="m-0 p-0 relative overflow-hidden transition-all duration-300 max-h-0 list-none"
+                        x-ref="dropdown_childs"
+                        :style="has_active_item(&#39;dropdown_childs&#39;) || open === &#39;childs&#39; ? &#39;max-height: &#39; + $refs.dropdown_childs.scrollHeight + &#39;px&#39; : &#39;&#39;"
+                        style="">
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;child-kharkov&#39;)}">
+                            <a href="https://onclinic.ua/child-kharkov" aria-label="Харків Дитяче"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Харків Дитяче
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;child-poltava&#39;)}">
+                            <a href="https://onclinic.ua/child-poltava" aria-label="Полтава Дитяче"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Полтава Дитяче
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;child-nikolaev&#39;)}">
+                            <a href="https://onclinic.ua/child-nikolaev" aria-label="Миколаїв Дитяче"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Миколаїв Дитяче
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown mt-0"
+                    :class="{&#39;open&#39;: has_active_item(&#39;dropdown_ambulances&#39;) || open === &#39;ambulances&#39;}">
+                    <div class="font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white"
+                         @click="toggle(&#39;ambulances&#39;)">Швидка допомога
+                    </div>
+                    <ul class="m-0 p-0 relative overflow-hidden transition-all duration-300 max-h-0 list-none"
+                        x-ref="dropdown_ambulances"
+                        :style="has_active_item(&#39;dropdown_ambulances&#39;) || open === &#39;ambulances&#39; ? &#39;max-height: &#39; + $refs.dropdown_ambulances.scrollHeight + &#39;px&#39; : &#39;&#39;"
+                        style="">
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.representatives.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;skoraya-pomosh&#39;)}">
+                            <a href="https://onclinic.ua/skoraya-pomosh" aria-label="Швидка допомога Харків"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1 py-1/2 text-white">
+                                Швидка допомога Харків
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hover:bg-menu-hover list-none mt-0">
+                    <a href="https://onclinic.ua/surgery.html" aria-label="Малоинвазивная хирургия"
+                       :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.clinic-departments.show&#39;) &amp;&amp; is_param(&#39;representative&#39;, &#39;kharkov&#39;) &amp;&amp; is_param(&#39;clinic_department&#39;, &#39;surgery&#39;)}"
+                       class="no-underline hover:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Хірургія
+                    </a>
+                </li>
+                <li class="hover:bg-menu-hover list-none mt-0">
+                    <a href="https://onclinic.ua/onlab.html" aria-label="Лабораторія «ОН Клінік»"
+                       :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.pages.show&#39;) &amp;&amp; is_param(&#39;page&#39;, &#39;onlab&#39;)}"
+                       class="no-underline hover:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Лабораторія «ОН Клінік»
+                    </a>
+                </li>
+                <li class="hover:bg-menu-hover list-none mt-0">
+                    <a href="https://onclinic.ua/forma-covid.html" aria-label="Тестування Covid"
+                       :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.pages.show&#39;) &amp;&amp; is_param(&#39;page&#39;, &#39;forma-covid&#39;)}"
+                       class="no-underline hover:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Тестування Covid
+                    </a>
+                </li>
+                <li class="hover:bg-menu-hover list-none mt-0">
+                    <a href="https://onclinic.ua/test-verification.html" aria-label="Результати аналізів"
+                       :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.pages.show&#39;) &amp;&amp; is_param(&#39;page&#39;, &#39;test-verification&#39;)}"
+                       class="no-underline hover:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white active active:bg-olive">
+                        Результати аналізів
+                    </a>
+                </li>
+                <li class="hover:bg-menu-hover list-none mt-0">
+                    <a href="https://onclinic.ua/videoconsultation.html" aria-label="Відеоконсультація"
+                       :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.pages.show&#39;) &amp;&amp; is_param(&#39;page&#39;, &#39;videoconsultation&#39;)}"
+                       class="no-underline hover:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Відеоконсультація
+                    </a>
+                </li>
+                <li class="hover:bg-menu-hover mt-0"
+                    :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.pages.show&#39;) &amp;&amp; is_param(&#39;page&#39;, &#39;about&#39;)}">
+                    <a href="https://onclinic.ua/about.html" aria-label="Про компанію"
+                       class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Про компанію
+                    </a>
+                </li>
+                <li class="hover:bg-menu-hover mt-0"
+                    :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.doctors.index&#39;)}">
+                    <a href="https://onclinic.ua/doctors" aria-label="Лікарі"
+                       class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Лікарі
+                    </a>
+                </li>
+                <li class="hover:bg-menu-hover mt-0"
+                    :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.feedback.index&#39;)}">
+                    <a href="https://onclinic.ua/feedback" aria-label="Відгуки"
+                       class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Відгуки
+                    </a>
+                </li>
+                <li class="dropdown mt-0"
+                    :class="{&#39;open&#39;: has_active_item(&#39;dropdown_articles&#39;) || open === &#39;articles&#39;}">
+                    <div class="no-underline hover:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white"
+                         @click="toggle(&#39;articles&#39;)">Блог
+                    </div>
+                    <ul class="m-0 p-0 relative overflow-hidden transition-all duration-300 max-h-0 list-none"
+                        x-ref="dropdown_articles"
+                        :style="has_active_item(&#39;dropdown_articles&#39;) || open === &#39;articles&#39; ? &#39;max-height: &#39; + $refs.dropdown_articles.scrollHeight + &#39;px&#39; : &#39;&#39;"
+                        style="">
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.articles.index&#39;)}">
+                            <a href="https://onclinic.ua/blog" aria-label="Всі статті"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                                Всі статті
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.articles.category&#39;) &amp;&amp; is_param(&#39;article_category&#39;, &#39;gynecology&#39;)}">
+                            <a href="https://onclinic.ua/blog/category/gynecology" aria-label="Гінекологія"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                                Гінекологія
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.articles.category&#39;) &amp;&amp; is_param(&#39;article_category&#39;, &#39;dermatology&#39;)}">
+                            <a href="https://onclinic.ua/blog/category/dermatology" aria-label="Дерматологія"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                                Дерматологія
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.articles.category&#39;) &amp;&amp; is_param(&#39;article_category&#39;, &#39;urology&#39;)}">
+                            <a href="https://onclinic.ua/blog/category/urology" aria-label="Урологія"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                                Урологія
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.articles.category&#39;) &amp;&amp; is_param(&#39;article_category&#39;, &#39;proctology&#39;)}">
+                            <a href="https://onclinic.ua/blog/category/proctology" aria-label="Проктологія"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                                Проктологія
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.articles.category&#39;) &amp;&amp; is_param(&#39;article_category&#39;, &#39;sexually-transmitted-diseases&#39;)}">
+                            <a href="https://onclinic.ua/blog/category/sexually-transmitted-diseases" aria-label="ЗПСШ"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                                ЗПСШ
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.articles.category&#39;) &amp;&amp; is_param(&#39;article_category&#39;, &#39;therapist&#39;)}">
+                            <a href="https://onclinic.ua/blog/category/therapist" aria-label="Сімейна медицина"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                                Сімейна медицина
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.articles.category&#39;) &amp;&amp; is_param(&#39;article_category&#39;, &#39;sex&#39;)}">
+                            <a href="https://onclinic.ua/blog/category/sex" aria-label="Секс"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                                Секс
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.articles.category&#39;) &amp;&amp; is_param(&#39;article_category&#39;, &#39;interesnoe&#39;)}">
+                            <a href="https://onclinic.ua/blog/category/interesnoe" aria-label="Цікаве"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                                Цікаве
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.articles.category&#39;) &amp;&amp; is_param(&#39;article_category&#39;, &#39;contraception-blog&#39;)}">
+                            <a href="https://onclinic.ua/blog/category/contraception-blog" aria-label="Контрацепція"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                                Контрацепція
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.articles.category&#39;) &amp;&amp; is_param(&#39;article_category&#39;, &#39;pregnancy&#39;)}">
+                            <a href="https://onclinic.ua/blog/category/pregnancy" aria-label="Вагітність"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                                Вагітність
+                            </a>
+                        </li>
+                        <li class="hover:bg-menu-hover mt-0"
+                            :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.articles.category&#39;) &amp;&amp; is_param(&#39;article_category&#39;, &#39;child-health-blog&#39;)}">
+                            <a href="https://onclinic.ua/blog/category/child-health-blog"
+                               aria-label="Дитяче здоров&#39;я"
+                               class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                                Дитяче здоров'я
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hover:bg-menu-hover mt-0"
+                    :class="{&#39;active active:bg-olive&#39;: is_current([&#39;frontend.news.index&#39;, &#39;frontend.news.show&#39;])}">
+                    <a href="https://onclinic.ua/news" aria-label="Новини"
+                       class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Новини
+                    </a>
+                </li>
+                <li class="hover:bg-menu-hover mt-0"
+                    :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.questions&#39;)}">
+                    <a href="https://onclinic.ua/questions" aria-label="Запитання та відповіді"
+                       class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Запитання та відповіді
+                    </a>
+                </li>
+                <li class="hover:bg-menu-hover mt-0"
+                    :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.pages.show&#39;) &amp;&amp; is_current(&#39;page&#39;, &#39;quality-control&#39;)}">
+                    <a href="https://onclinic.ua/quality-control.html" aria-label="Служба контролю якості"
+                       class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Служба контролю якості
+                    </a>
+                </li>
+                <li class="hover:bg-menu-hover mt-0"
+                    :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.pages.show&#39;) &amp;&amp; is_current(&#39;page&#39;, &#39;vacancies&#39;)}">
+                    <a href="https://onclinic.ua/vacancies.html" aria-label="Вакансії"
+                       class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Вакансії
+                    </a>
+                </li>
+                <li class="hover:bg-menu-hover mt-0"
+                    :class="{&#39;active active:bg-olive&#39;: is_current(&#39;frontend.pages.show&#39;) &amp;&amp; is_current(&#39;page&#39;, &#39;discounts&#39;)}">
+                    <a href="https://onclinic.ua/discounts.html" aria-label="Знижки на лікування в «ОН Клінік»"
+                       class="no-underline hover:no-underline focus:no-underline font-neosans hover:bg-menu-hover block text-14 leading-1-1/2 py-1/2 text-white">
+                        Знижки на лікування в «ОН Клінік»
+                    </a>
+                </li>
+                <li class="button cart-button olive desktop:mt-2 ml-1">
+                    <a role="button" @click="
+                            window.livewire.emitTo(&#39;frontend.layout.forms.recall&#39;, &#39;loadForm&#39;);
+                            $store.app.formOpen = &#39;recall&#39;;
+                            $store.app.recallOpen = true;
+                        " aria-label="Зворотний дзвінок"
+                       class="no-underline hover:no-underline focus:no-underline font-neosans block text-14 leading-1-1/2 py-1/2 text-white">
+                        Зворотний дзвінок
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+<main class="bg-white relative" id="page">
+    <div x-show="$store.app.formOpen" class="bg-main-blue bg-opacity-50 absolute top-0 right-0 bottom-0 left-0 z-20"
+         style="display: none;"></div>
+    <div class="content min-h-screen">
+        <nav class="breadcrumbs h-auto pt-1 pb-0">
+            <ol class="list-reset flex flex-wrap pl-0 mb-0 mt-0">
+                <li class="active list-none mt-0">
+                    <a href="https://onclinic.ua/"
+                       class="hover:underline text-3/4 focus:underline text-main-blue font-roboto" aria-label="Головна">
+                        Головна
+                    </a>
+                </li>
+                <li class="list-none mt-0"><span class="mx-1/4 font-roboto text-3/4 text-main-blue">/</span></li>
+                <li class="list-none mt-0">
+<span class="text-gray-700 font-roboto text-3/4 hover:no-underline focus:no-underline"
+      aria-label="Перевірити результати аналізів">
+Перевірити результати аналізів
+</span>
+                </li>
+            </ol>
+        </nav>
+        <h1>Перевірити результати аналізів</h1>
+        <div class="mb-4 grid grid-cols-4">
+            <div class="col-start-1 col-end-5 desktop:col-start-1 desktop:col-end-4">
+                <p>Для перегляду та скачування результату аналізу, введіть індивідуальний код, розташований у верхньому
+                    правому куті бланка.</p>
+                <p>Код містить цифри і букви латинського алфавіту.</p>
+                <div class=" mb-1 grid grid-cols-4">
+                    <div class="col-start-1 col-end-5  desktop:col-end-3">
+                        <div class="form-verification">
+                            <form method="GET" action="https://onclinic.ua/test-verification.html"
+                                  accept-charset="UTF-8">
+                                <div class="form-group">
+                                    <input class="form-control-forms" placeholder="Код" required="" id="certId"
+                                           name="code" type="text" value="">
+                                </div>
+                                <input class="button olive mr-1/2 mb-1/2" type="submit" value="Отримати">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray-100 pt-1 relative tablet:sticky pb-1/2 z-20 form-bottom-sticky">
+        <div class="content">
+            <div class="tablet:flex">
+                <div class="flex flex-col justify-center tablet:justify-start tablet:flex-row tablet:items-center flex-wrap items-center ">
+                    <button x-data="{cart: 0}"
+                            @click.stop="window.livewire.emitTo(&#39;frontend.layout.forms.appointment&#39;, &#39;loadForm&#39;); $store.app.formOpen = &#39;appointment&#39;;"
+                            @price-added.window="cart++" @price-removed.window="cart &gt; 0 ? cart-- : cart = 0"
+                            class="button cart-button olive mr-1/2 mb-1/2">
+                        Записатись на прийом <span x-show="cart &gt; 0" x-text="&#39;+&#39;+cart"
+                                                   style="display: none;">+0</span>
+                    </button>
+                    <button @click.stop="
+                            window.livewire.emitTo(&#39;frontend.layout.forms.question&#39;, &#39;loadForm&#39;);
+                            $store.app.formOpen = &#39;question&#39;;
+                            " class="button olive-outline mb-1/2 mr-1/2">
+                        Поставити питання
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div x-data="MobileButtons({cart: 0})" @scroll.window.debounce="toggleVisibility()" x-show="!hidden"
+         class="bottom-sticky fixed bottom-0 w-full z-10 desktop:hidden tablet:hidden">
+        <div class="flex items-end justify-between w-full py-1 px-1/2">
+            <a role="button"
+               @click.stop="window.livewire.emitTo(&#39;frontend.layout.forms.appointment&#39;, &#39;loadForm&#39;); $store.app.formOpen = &#39;appointment&#39;;"
+               @price-added.window="cart++" @price-removed.window="cart &gt; 0 ? cart-- : cart = 0"
+               class="button cart-button shadow olive mt-1/2 mr-1/2">
+                Записатись на прийом <span x-show="cart" x-text="&#39;+&#39;+cart" style="display: none;">+0</span>
+            </a>
+            <div class="flex flex-col">
+                <a role="button" @click="scrollToTop()" class="scroll-to-top">
+                    <img width="1" height="1" src="./inde_files/scroll-to-top.svg" alt="">
+                </a>
+                <a href="tel:0800301177"
+                   class="button olive rounded-50 tablet:hidden round shadow flex items-center justify-center mt-1/2 ">
+                    <img width="1" height="1" src="./inde_files/icon-phone.svg" alt="phone number">
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bg-main-blue z-10 desktop:pb-2 pb-1">
+    <div class="social-links tablet:hidden pt-30 pb-20">
+        <div class="content">
+            <div class="text-center text-3/4 leading-1 text-white font-neosans pt-1">
+                Ділимося порадами, пишемо статті про здоров'я, розповідаємо про нововведення в медицині. Приєднуйтесь до
+                нас в:
+            </div>
+            <div class="link grid grid-cols-5 gap-1/2 pt-1">
+                <a href="https://www.facebook.com/onclinic.ua"
+                   class=" bg-olive flex justify-center items-center rounded-3">
+                    <img width="1" height="1" src="./inde_files/f-icon-facebook.svg" alt="" class="w-auto"
+                         loading="lazy">
+                </a>
+                <a href="https://www.instagram.com/onclinic.ua/?hl=ru"
+                   class="bg-olive flex justify-center items-center rounded-3">
+                    <img width="1" height="1" src="./inde_files/f-icon-insta.svg" alt="" class="w-auto" loading="lazy">
+                </a>
+                <a href="https://t.me/onclinic_medycyna_tut"
+                   class="bg-olive flex justify-center items-center rounded-3">
+                    <img width="1" height="1" src="./inde_files/f-icon-telegram.svg" alt="" class="w-auto"
+                         loading="lazy">
+                </a>
+                <a href="https://www.youtube.com/user/onclinicsu"
+                   class="bg-olive flex justify-center items-center rounded-3">
+                    <img width="1" height="1" src="./inde_files/f-icon-youtube.svg" alt="" class="w-auto"
+                         loading="lazy">
+                </a>
+                <a href="https://www.tiktok.com/@onclinic.ua?_d=secCgYIASAHKAESMgowBwlu09jEus%2Fyo9bKRJ7n5kvbNcHiTnZw%2FilAFeIGzz6uwgwfNGzHp6urR30yQVR5GgA%3D&amp;language=ru&amp;sec_uid=MS4wLjABAAAAE8o-nhYl-8TGM_e9UQjQhJLFxDal2PO3sVSFINfCV3_a9jTiLI2CTwBQ-Cq9JHVj&amp;sec_user_id=MS4wLjABAAAAuyfcItXAh3SSz21TmgK0coO2chKrrfX6Qc5I-tI-KQAxpZ4CIyeQOKZDar81VKNt&amp;share_app_name=musically&amp;share_author_id=6811085572289332230&amp;share_link_id=746827b1-a326-480b-b683-54f78ffcbdc8&amp;timestamp=1614853713&amp;u_code=dacmfe99114cck&amp;am"
+                   class=" bg-olive flex justify-center items-center rounded-3">
+                    <img width="1" height="1" src="./inde_files/icon-tiktok.svg" alt="" class="w-auto" loading="lazy">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="footer-top-links grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 py-1">
+            <div>
+                <ul class="m-0 p-0">
+                    <li class="list-none list-none mt-0">
+                        <a href="https://onclinic.ua/insurance-partner-companies"
+                           class="text-3/4 leading-2 text-white no-underline hover:underline focus:underline">
+                            Страхові партнери
+                        </a>
+                    </li>
+                    <li class="list-none list-none mt-0">
+                        <a href="https://onclinic.ua/partial-payment.html"
+                           class="text-3/4 leading-2 text-white no-underline hover:underline focus:underline">
+                            Оплата частинами
+                        </a>
+                    </li>
+                    <li class="list-none list-none mt-0">
+                        <a href="https://onclinic.ua/onlab.html"
+                           class="text-3/4 leading-2 text-white no-underline hover:underline focus:underline">
+                            Про лабораторію «ОН Клінік»
+                        </a>
+                    </li>
+                    <li class="list-none list-none mt-0">
+                        <a href="https://onclinic.ua/discounts.html"
+                           class="text-3/4 leading-2 text-white no-underline hover:underline focus:underline">
+                            Знижки на лікування в «ОН Клінік»
+                        </a>
+                    </li>
+                    <li class="list-none list-none mt-0">
+                        <a href="https://onclinic.ua/advertising-campaign.html"
+                           class="text-3/4 leading-2 text-white no-underline hover:underline focus:underline">
+                            Умови акції
+                        </a>
+                    </li>
+                    <li class="list-none list-none mt-0">
+                        <a href="https://onclinic.ua/companies"
+                           class="text-3/4 leading-2 text-white no-underline hover:underline focus:underline">
+                            Наші партнери
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="m-0 p-0">
+                    <li class="list-none list-none mt-0">
+                        <a href="https://onclinic.ua/rekvisity.html"
+                           class="text-3/4 leading-2 text-white no-underline hover:underline focus:underline">
+                            Реквізити для оплати
+                        </a>
+                    </li>
+                    <li class="list-none list-none mt-0">
+                        <a href="https://onclinic.ua/online-oplata.html"
+                           class="text-3/4 leading-2 text-white no-underline hover:underline focus:underline">
+                            Оплата онлайн
+                        </a>
+                    </li>
+                    <li class="list-none list-none mt-0">
+                        <a href="https://onclinic.ua/privacy-policy.html"
+                           class="text-3/4 leading-2 text-white no-underline hover:underline focus:underline">
+                            Умови конфіденційності
+                        </a>
+                    </li>
+                    <li class="list-none list-none mt-0">
+                        <a href="https://plastic-surgery.onclinic.ua/" target="_blank" aria-label="Пластична хірургія"
+                           class="text-3/4 leading-2 text-white no-underline hover:underline focus:underline">
+                            Пластична хірургія
+                        </a>
+                    </li>
+                    <li class="list-none list-none mt-0">
+                        <a href="https://syirbu.onclinic.ua/" target="_blank" aria-label="Дитячий лікар"
+                           class="text-3/4 leading-2 text-white no-underline hover:underline focus:underline">
+                            Дитячий лікар
+                        </a>
+                    </li>
+                    <li class="list-none list-none mt-0">
+                        <a href="https://medcentercrm.com/ua/" target="_blank" aria-label="Медична інформаційна система"
+                           class="text-3/4 leading-2 text-white no-underline hover:underline focus:underline">
+                            МІС
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-2 tablet:mt-0 rounded-8 border-light-blue border-1 p-1 tablet:col-end-5 h-fit-content">
+                <div class="grid grid-cols-4 tablet:grid-cols-2 grid-rows-1 tablet:grid-rows-2 gap-1 type-payment">
+                    <img loading="lazy" width="51" height="33" src="./inde_files/f-icon-apple-pay.svg"
+                         class="my-auto tablet:mx-0 w-auto" alt="apple-pay">
+                    <img loading="lazy" width="56" height="40" src="./inde_files/f-icon-master.svg" alt="mastercard"
+                         class="my-auto mx-auto tablet:ml-auto  tablet:mx-0 w-auto">
+                    <img loading="lazy" width="49" height="31" src="./inde_files/f-icon-google-pay.svg" alt="google-pay"
+                         class="my-auto mx-auto tablet:mt-auto tablet:ml-0 tablet:mr-auto w-auto">
+                    <img loading="lazy" width="65" height="21" src="./inde_files/f-icon-visa.svg" alt="visa"
+                         class="my-auto mx-auto tablet:mt-auto  tablet:ml-auto tablet:mx-0 w-auto">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-footer-links">
+        <div class="content">
+            <div class=" border-t-1 border-light-blue" x-data="{selected:null}">
+                <div class="footer-links" x-bind:class="{&#39;open&#39; : selected === 1 }">
+                    <div class="title cursor-pointer flex items-center py-1/2"
+                         @click="selected !== 1 ? selected = 1 : selected = null">
+                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M5 5.65685L7.82843 2.82843L9.24264 4.24264L5.70711 7.77817C5.31658 8.1687 4.68342 8.1687 4.29289 7.77817L0.757359 4.24264L2.17157 2.82843L5 5.65685Z"
+                                  fill="white"></path>
+                        </svg>
+                        <span class="ml-1 font-neosans text-1 text-white leading-2">
+Представництва
+</span>
+                    </div>
+                    <div class="links grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 gap-1 relative overflow-hidden transition-all max-h-0 duration-300"
+                         x-ref="container1"
+                         x-bind:style="selected == 1 ? &#39;max-height: &#39; + $refs.container1.scrollHeight + &#39;px&#39; : &#39;&#39;"
+                         style="">
+                        <div>
+                            <ul class="m-0 p-0">
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/child-kharkov"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Харків Дитяче
+                                    </a>
+                                </li>
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/kharkov"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Харків
+                                    </a>
+                                </li>
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/child-poltava"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Полтава Дитяче
+                                    </a>
+                                </li>
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/child-nikolaev"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Миколаїв Дитяче
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="m-0 p-0">
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/sumy"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Суми
+                                    </a>
+                                </li>
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/poltava"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Полтава
+                                    </a>
+                                </li>
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/dnepropetrovsk"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Дніпро
+                                    </a>
+                                </li>
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/odessa"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Одеса
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="m-0 p-0">
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/nikolaev"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Миколаїв
+                                    </a>
+                                </li>
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/mariupol"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Маріуполь
+                                    </a>
+                                </li>
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/uzhgorod"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Ужгород
+                                    </a>
+                                </li>
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/belaya-cerkov"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Біла Церква
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="m-0 p-0">
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/chernigov"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Чернігів
+                                    </a>
+                                </li>
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/cherkassyi"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Черкаси
+                                    </a>
+                                </li>
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/kropivnickiy"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Кропивницький
+                                    </a>
+                                </li>
+                                <li class="list-none list-none mt-0">
+                                    <a href="https://onclinic.ua/skoraya-pomosh"
+                                       class="text-3/4 leading-2 font-roboto text-white no-underline hover:underline focus:underline">
+                                        Швидка допомога Харків
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-footer pt-1-1/2">
+        <div class="content">
+            <div class="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4  gap-1">
+                <div class="text-light-blue text-3/4 leading-1-1/2">
+                    Самолікування може бути небезпечним для вашого здоров'я.
+                </div>
+                <div class="text-light-blue text-3/4 leading-1-1/2">
+                    On Clinic Advanced Medical Institute,
+                    <br>LTD. 2007-2021 © All Rights Reserved.
+                </div>
+                <div class="relative">
+                    <img src="./inde_files/logo-light-blue.svg" class="logo block m-0 desktop:ml-auto object-cover"
+                         alt="" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="form-modal modal-sidebar pt-2 pb-4 desktop:px-1 fixed h-screen"
+     @click.away="$store.app.recallOpen ? $store.app.recallOpen = null : $store.app.formOpen = null">
+    <div wire:id="De10n1dbu4ouNnN00YPe"
+         x-data="Appointment({state: window.Livewire.find(&#39;De10n1dbu4ouNnN00YPe&#39;).entangle(&#39;state&#39;)})"
+         x-show="$store.app.formOpen === &#39;appointment&#39;" class="relative pb-3 desktop:pb-1"
+         style="display: none;">
+        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">
+            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">
+                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>
+            </div>
+        </div>
+        <div class="title flex items-start mb-2">
+            <img @click="goBack()" role="button" class="mr-1 cursor-pointer h-2 w-auto" width="32" height="32"
+                 src="./inde_files/arrow-olive-back-modal.svg" alt="Назад">
+            <h2 class="font-neosans text-black mt-0">
+                Завантажуємо...
+            </h2>
+        </div>
+    </div>
+    <div wire:id="jfA7A1VszTeg5SpiD0B5" x-data="Question()" x-show="$store.app.formOpen === &#39;question&#39;"
+         class="relative" style="display: none;">
+        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">
+            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">
+                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>
+            </div>
+        </div>
+        <div class="title flex items-start mb-2">
+            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button"
+               class="mr-1 no-underline flex"><img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg"
+                                                   alt=""></a>
+            <h2 class="font-neosans text-black mt-0">
+                Завантажуємо...
+            </h2>
+        </div>
+    </div>
+    <div wire:id="2bOXnwGoDeoUjOK7K5Kf" x-data="Feedback()" x-show="$store.app.formOpen === &#39;feedback&#39;"
+         class="relative" style="display: none;">
+        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">
+            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">
+                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>
+            </div>
+        </div>
+        <div class="title flex items-start mb-2">
+            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button" class="mr-1 no-underline flex">
+                <img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg" alt="">
+            </a>
+            <h2 class="font-neosans text-black mt-0">
+                Завантажуємо...
+            </h2>
+        </div>
+    </div>
+    <div wire:id="enAlaTRqbmQwld0lyTjV" x-data="PriceClarification()"
+         x-show="$store.app.formOpen === &#39;price-clarification&#39;" class="relative" style="display: none;">
+        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">
+            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">
+                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>
+            </div>
+        </div>
+        <div class="title flex items-start mb-2">
+            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button"
+               class="mr-1 no-underline flex"><img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg"
+                                                   alt=""></a>
+            <h2 class="font-neosans text-black mt-0">
+                Завантажуємо...
+            </h2>
+        </div>
+    </div>
+    <div wire:id="KZUDcUNTtNaNRRaB0145" x-data="Recall()" x-show="$store.app.formOpen === &#39;recall&#39;"
+         class="relative" style="display: none;">
+        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">
+            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">
+                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>
+            </div>
+        </div>
+        <div class="title flex items-start mb-2">
+            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button" class="mr-1 no-underline flex">
+                <img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg" alt="">
+            </a>
+            <h2 class="font-neosans text-black mt-0">
+                Завантажуємо...
+            </h2>
+        </div>
+    </div>
+    <div wire:id="tQ6iEhMdpuY5fVRxwvxO" x-data="VacancyCandidate()"
+         x-show="$store.app.formOpen === &#39;vacancy-candidate&#39;" class="relative" style="display: none;">
+        <div wire:loading.delay="wire:loading.delay"
+             class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-10">
+            <div class="flex items-center justify-center absolute top-0 left-0 right-0 bottom-0">
+                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>
+                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div wire:id="4lrpw57b6o87vjI1vdYf" wire:init="init" x-data="Subscription()">
+    <div x-show="$store.app.modalOpen === &#39;subscription&#39;"
+         class="fixed bg-main-blue px-1 py-2 container-subscribe-form " style="display: none;">
+
+        <img loading="lazy" src="./inde_files/subscribe_form_onclinic.png" alt="Subscribe form"
+             class="img-subscribe-form w-auto">
+        <div id="close-icon" @click="closeModal()" class="close-icon esputnik-close-form">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="block-form ">
+            <h2 class="text-white mb-2 mt-0">
+                <span class="font-bold">Чекліст зі здоров’я</span>
+                <br>
+                в подарунок за підписку!
+            </h2>
+
+
+            <div class="form-group">
+                <input wire:model.defer="name" placeholder="Ваше ім&#39;я" class="">
+            </div>
+            <div class="form-group">
+                <input wire:model.defer="email" placeholder="Ваш email" class="">
+            </div>
+            <button type="button" class="button olive" x-on:click="submit()">
+                Підписатися
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="./inde_files/livewire.js.download" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+<script data-turbo-eval="false" data-turbolinks-eval="false">window.livewire = new Livewire();
+window.Livewire = window.livewire;
+window.livewire_app_url = '';
+window.livewire_token = 'HN8lbJz5knVj3TO1xYSqTFLBwdMvHQ6TOqeB0NYi';
+window.deferLoadingAlpine = function (callback) {
+    window.addEventListener('livewire:load', function () {
+        callback();
+    });
+};
+let started = false;
+window.addEventListener('alpine:initializing', function () {
+    if (!started) {
+        window.livewire.start();
+        started = true;
+    }
+});
+document.addEventListener("DOMContentLoaded", function () {
+    if (!started) {
+        window.livewire.start();
+        started = true;
+    }
+});</script>
+<script defer="" src="./inde_files/manifest.js.download"></script>
+<script defer="" src="./inde_files/vendor.js.download"></script>
+<script defer="" src="./inde_files/app.js.download"></script>
+
+
+<script>
+    var lastCheck = new Date();
+    var caffeineSendDrip = function () {
+        var ajax = window.XMLHttpRequest
+            ? new XMLHttpRequest
+            : new ActiveXObject('Microsoft.XMLHTTP');
+
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState === 4 && ajax.status === 204) {
+                lastCheck = new Date();
+            }
+        };
+
+        ajax.open('GET', '/genealabs/laravel-caffeine/drip');
+        ajax.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        ajax.send();
+    };
+
+    setInterval(function () {
+        caffeineSendDrip();
+    }, 60000);
+
+    if (2000 > 0) {
+        setInterval(function () {
+            if (new Date() - lastCheck >= 7082000) {
+                location.reload(true);
+            }
+        }, 2000);
+    }
+</script>
+<div id="onclinic.ua"></div>
+<script src="./inde_files/api.js.download"></script>
+<script src="./inde_files/f9N4iNlmo9"></script>
+<div>
+    <div class="grecaptcha-badge" data-style="bottomright"
+         style="width: 256px; height: 60px; position: fixed; visibility: hidden; display: block; transition: right 0.3s ease 0s; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">
+        <div class="grecaptcha-logo">
+            <iframe title="reCAPTCHA" src="./inde_files/anchor.html" width="256" height="60" role="presentation"
+                    name="a-ymvxdo2y9x9j" frameborder="0" scrolling="no"
+                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+        </div>
+        <div class="grecaptcha-error"></div>
+        <textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response"
+                  style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+    </div>
+    <iframe style="display: none;" src="./inde_files/saved_resource.html"></iframe>
+</div>
+<div id="jivo-iframe-container" style="opacity: 0; visibility: hidden; width: 0px; height: 0px; overflow: hidden;">
+    <iframe allow="autoplay" title="Jivochat" name="jivo_container" id="pdfIframe"
+            frameborder="no" src="./inde_files/saved_resource(1).html"></iframe>
+</div>
 </body>
-
 </html>
