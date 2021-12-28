@@ -67,30 +67,9 @@
            class="items-center border-2 rounded-3 border-olive mx-1/4 px-1/2 desktop:px-1 py-1/4 tablet:py-0 text-3/4 tablet:text-14 tablet:leading-2 leading-1 font-normal tablet:font-medium font-neosans text-white hover:underline">
             Вакцинація
         </a>
-        <a href="https://www.tiktok.com/@onclinic.ua?_d=secCgYIASAHKAESMgowBwlu09jEus%2Fyo9bKRJ7n5kvbNcHiTnZw%2FilAFeIGzz6uwgwfNGzHp6urR30yQVR5GgA%3D&amp;language=ru&amp;sec_uid=MS4wLjABAAAAE8o-nhYl-8TGM_e9UQjQhJLFxDal2PO3sVSFINfCV3_a9jTiLI2CTwBQ-Cq9JHVj&amp;sec_user_id=MS4wLjABAAAAuyfcItXAh3SSz21TmgK0coO2chKrrfX6Qc5I-tI-KQAxpZ4CIyeQOKZDar81VKNt&amp;share_app_name=musically&amp;share_author_id=6811085572289332230&amp;share_link_id=746827b1-a326-480b-b683-54f78ffcbdc8&amp;timestamp=1614853713&amp;u_code=dacmfe99114cck&amp;am"
-               target="_blank" class="mx-1/4 hidden desktop:flex">
-                <img width="1" height="1" src="./inde_files/icon-tiktok.svg" alt="">
-            </a>
-            <a href="https://www.instagram.com/onclinic.ua/?hl=ru" target="_blank" class="mx-1/4 hidden desktop:flex">
-                <img width="1" height="1" src="./inde_files/icon-insta.svg" alt="">
-            </a>
-            <a href="https://t.me/onclinic_medycyna_tut" target="_blank" class="mx-1/4 hidden desktop:flex">
-                <img width="1" height="1" src="./inde_files/icon-telegramm.svg" alt="">
-            </a>
-            <a href="https://www.youtube.com/user/onclinicsu" target="_blank" class="mx-1/4 hidden desktop:flex">
-                <img width="1" height="1" src="./inde_files/icon-youtube.svg" alt="">
-            </a>
-            <a href="https://www.facebook.com/onclinic.ua" target="_blank" class="mx-1/4 hidden desktop:flex">
-                <img width="1" height="1" src="./inde_files/icon-facebook.svg" alt="">
-            </a>
-            <a href="https://mycabinet.info/" target="_blank" class="ml-1/4 flex desktop:hidden ">
-                <img width="1" height="1" src="./inde_files/personal-cabinet.svg" alt="">
-            </a>
     </div>
 </header>
 <main class="bg-white relative" id="page">
-    <div x-show="$store.app.formOpen" class="bg-main-blue bg-opacity-50 absolute top-0 right-0 bottom-0 left-0 z-20"
-         style="display: none;"></div>
     <div class="content min-h-screen">
         <nav class="breadcrumbs h-auto pt-1 pb-0">
             <ol class="list-reset flex flex-wrap pl-0 mb-0 mt-0">
@@ -128,7 +107,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         <iframe id="pdfIframe"
@@ -139,19 +117,8 @@
         <div class="content">
             <div class="tablet:flex">
                 <div class="flex flex-col justify-center tablet:justify-start tablet:flex-row tablet:items-center flex-wrap items-center ">
-                    <button x-data="{cart: 0}"
-                            @click.stop="window.livewire.emitTo(&#39;frontend.layout.forms.appointment&#39;, &#39;loadForm&#39;); $store.app.formOpen = &#39;appointment&#39;;"
-                            @price-added.window="cart++" @price-removed.window="cart &gt; 0 ? cart-- : cart = 0"
-                            class="button cart-button olive mr-1/2 mb-1/2">
-                        Записатись на прийом <span x-show="cart &gt; 0" x-text="&#39;+&#39;+cart"
-                                                   style="display: none;">+0</span>
-                    </button>
-                    <button @click.stop="
-                            window.livewire.emitTo(&#39;frontend.layout.forms.question&#39;, &#39;loadForm&#39;);
-                            $store.app.formOpen = &#39;question&#39;;
-                            " class="button olive-outline mb-1/2 mr-1/2">
-                        Поставити питання
-                    </button>
+                    <button class="button cart-button olive mr-1/2 mb-1/2">Записатись на прийом</button>
+                    <button class="button olive-outline mb-1/2 mr-1/2">Поставити питання</button>
                 </div>
             </div>
         </div>
@@ -242,13 +209,13 @@
             </div>
             <div class="mt-2 tablet:mt-0 rounded-8 border-light-blue border-1 p-1 tablet:col-end-5 h-fit-content">
                 <div class="grid grid-cols-4 tablet:grid-cols-2 grid-rows-1 tablet:grid-rows-2 gap-1 type-payment">
-                    <img loading="lazy" width="51" height="33" src="./inde_files/f-icon-apple-pay.svg"
+                    <img width="51" height="33" src="./inde_files/f-icon-apple-pay.svg"
                          class="my-auto tablet:mx-0 w-auto" alt="apple-pay">
-                    <img loading="lazy" width="56" height="40" src="./inde_files/f-icon-master.svg" alt="mastercard"
+                    <img width="56" height="40" src="./inde_files/f-icon-master.svg" alt="mastercard"
                          class="my-auto mx-auto tablet:ml-auto  tablet:mx-0 w-auto">
-                    <img loading="lazy" width="49" height="31" src="./inde_files/f-icon-google-pay.svg" alt="google-pay"
+                    <img width="49" height="31" src="./inde_files/f-icon-google-pay.svg" alt="google-pay"
                          class="my-auto mx-auto tablet:mt-auto tablet:ml-0 tablet:mr-auto w-auto">
-                    <img loading="lazy" width="65" height="21" src="./inde_files/f-icon-visa.svg" alt="visa"
+                    <img width="65" height="21" src="./inde_files/f-icon-visa.svg" alt="visa"
                          class="my-auto mx-auto tablet:mt-auto  tablet:ml-auto tablet:mx-0 w-auto">
                 </div>
             </div>
@@ -265,8 +232,8 @@
                     <br>LTD. 2007-2021 © All Rights Reserved.
                 </div>
                 <div class="relative">
-                    <img src="./inde_files/logo-light-blue.svg" class="logo block m-0 desktop:ml-auto object-cover"
-                         alt="" loading="lazy">
+                    <img src="./inde_files/logo-light-blue.svg"
+                         class="logo block m-0 desktop:ml-auto object-cover" alt="">
                 </div>
             </div>
         </div>
