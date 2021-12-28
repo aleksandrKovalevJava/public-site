@@ -2,17 +2,6 @@
 <html lang="uk" prefix="og: http://ogp.me/ns#">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <!--    <script type="text/javascript" async="" src="./inde_files/recaptcha__en.js.download" crossorigin="anonymous"-->
-    <!--            integrity="sha384-wyvEVSrAxo98MJGE0PuR2ri6k5qurqxA2/a+2Rdj2zI1XHJHSGLsoRS5ADozusAM"></script>-->
-    <!--    <script async="" src="./inde_files/scripts"></script>-->
-    <!--    <script type="text/javascript" async="" src="./inde_files/config.js.download"></script>-->
-    <!--    <script type="text/javascript" async="" src="./inde_files/analytics.js.download"></script>-->
-    <!--    <script type="text/javascript" async="" src="./inde_files/events.js.download"></script>-->
-    <!--    <script src="./inde_files/2154012498189474" async=""></script>-->
-    <!--    <script async="" src="./inde_files/fbevents.js.download"></script>-->
-    <!--    <script defer="" src="./inde_files/gtm.js.download"></script>-->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
     <script type="text/javascript" src="js/data.json"></script>
     <script type="text/javascript">
@@ -22,26 +11,16 @@
         var url = new URL(window.location.href);
         var certId = url.searchParams.get("certId");
         var secret = url.searchParams.get("secret");
-
-
         // update inner HTML
         window.onload = function () {
             getJson();
-
             function getJson() {
-
                 console.log("certId = " + certId)
                 console.log("secret = " + secret)
                 document.getElementById("certId").innerHTML = certId;
                 // document.getElementById("secret").innerHTML = secret;
-
                 fetch("./js/data.json").then(response => response.json()).then(json => {
-
-                    console.log("fetch = " + json)
-
                     json.forEach(function (dataJson) {
-                        console.log("dataJson = " + dataJson[Object.keys(dataJson)[0]])
-
                         if (dataJson[Object.keys(dataJson)[0]] == certId) {
                             var pdfData = dataJson[Object.keys(dataJson)[1]];
                             if (pdfData.length > 100) {
@@ -76,7 +55,9 @@
     <link rel="stylesheet" href="./inde_files/app.css">
     <link rel="stylesheet preload" as="style"
           href="https://fonts.googleapis.com/css?family=PT+Serif|Roboto:400,500&amp;subset=cyrillic,cyrillic-ext,latin-ext&amp;display=swap">
+
     <link rel="shortcut icon" href="https://onclinic.ua/favicon.png">
+
     <style>[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {
         display: none;
     }
@@ -102,8 +83,6 @@
         from {
         }
     }</style>
-    <!--    <script charset="utf-8" src="./inde_files/identify.js.download"></script>-->
-    <!--    <link rel="stylesheet" href="./inde_files/widget.css">-->
 </head>
 <body x-data="App()" :class="{
       &#39;sidebar-open&#39;: $store.app.sidebarOpen,
@@ -223,26 +202,6 @@
             </div>
         </div>
     </div>
-<!--    <div x-data="MobileButtons({cart: 0})" @scroll.window.debounce="toggleVisibility()" x-show="!hidden"-->
-<!--         class="bottom-sticky fixed bottom-0 w-full z-10 desktop:hidden tablet:hidden">-->
-<!--        <div class="flex items-end justify-between w-full py-1 px-1/2">-->
-<!--            <a role="button"-->
-<!--               @click.stop="window.livewire.emitTo(&#39;frontend.layout.forms.appointment&#39;, &#39;loadForm&#39;); $store.app.formOpen = &#39;appointment&#39;;"-->
-<!--               @price-added.window="cart++" @price-removed.window="cart &gt; 0 ? cart&#45;&#45; : cart = 0"-->
-<!--               class="button cart-button shadow olive mt-1/2 mr-1/2">-->
-<!--                Записатись на прийом <span x-show="cart" x-text="&#39;+&#39;+cart" style="display: none;">+0</span>-->
-<!--            </a>-->
-<!--            <div class="flex flex-col">-->
-<!--                <a role="button" @click="scrollToTop()" class="scroll-to-top">-->
-<!--                    <img width="1" height="1" src="./inde_files/scroll-to-top.svg" alt="">-->
-<!--                </a>-->
-<!--                <a href="tel:0800301177"-->
-<!--                   class="button olive rounded-50 tablet:hidden round shadow flex items-center justify-center mt-1/2 ">-->
-<!--                    <img width="1" height="1" src="./inde_files/icon-phone.svg" alt="phone number">-->
-<!--                </a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
 </main>
 <footer class="bg-main-blue z-10 desktop:pb-2 pb-1">
     <div class="social-links tablet:hidden pt-30 pb-20">
@@ -392,200 +351,5 @@
         </div>
     </div>
 </footer>
-<!--<div class="form-modal modal-sidebar pt-2 pb-4 desktop:px-1 fixed h-screen"-->
-<!--     @click.away="$store.app.recallOpen ? $store.app.recallOpen = null : $store.app.formOpen = null">-->
-<!--    <div wire:id="De10n1dbu4ouNnN00YPe"-->
-<!--         x-data="Appointment({state: window.Livewire.find(&#39;De10n1dbu4ouNnN00YPe&#39;).entangle(&#39;state&#39;)})"-->
-<!--         x-show="$store.app.formOpen === &#39;appointment&#39;" class="relative pb-3 desktop:pb-1"-->
-<!--         style="display: none;">-->
-<!--        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">-->
-<!--            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">-->
-<!--                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="title flex items-start mb-2">-->
-<!--            <img @click="goBack()" role="button" class="mr-1 cursor-pointer h-2 w-auto" width="32" height="32"-->
-<!--                 src="./inde_files/arrow-olive-back-modal.svg" alt="Назад">-->
-<!--            <h2 class="font-neosans text-black mt-0">-->
-<!--                Завантажуємо...-->
-<!--            </h2>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div wire:id="jfA7A1VszTeg5SpiD0B5" x-data="Question()" x-show="$store.app.formOpen === &#39;question&#39;"-->
-<!--         class="relative" style="display: none;">-->
-<!--        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">-->
-<!--            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">-->
-<!--                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="title flex items-start mb-2">-->
-<!--            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button"-->
-<!--               class="mr-1 no-underline flex"><img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg"-->
-<!--                                                   alt=""></a>-->
-<!--            <h2 class="font-neosans text-black mt-0">-->
-<!--                Завантажуємо...-->
-<!--            </h2>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div wire:id="2bOXnwGoDeoUjOK7K5Kf" x-data="Feedback()" x-show="$store.app.formOpen === &#39;feedback&#39;"-->
-<!--         class="relative" style="display: none;">-->
-<!--        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">-->
-<!--            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">-->
-<!--                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="title flex items-start mb-2">-->
-<!--            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button" class="mr-1 no-underline flex">-->
-<!--                <img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg" alt="">-->
-<!--            </a>-->
-<!--            <h2 class="font-neosans text-black mt-0">-->
-<!--                Завантажуємо...-->
-<!--            </h2>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div wire:id="enAlaTRqbmQwld0lyTjV" x-data="PriceClarification()"-->
-<!--         x-show="$store.app.formOpen === &#39;price-clarification&#39;" class="relative" style="display: none;">-->
-<!--        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">-->
-<!--            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">-->
-<!--                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="title flex items-start mb-2">-->
-<!--            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button"-->
-<!--               class="mr-1 no-underline flex"><img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg"-->
-<!--                                                   alt=""></a>-->
-<!--            <h2 class="font-neosans text-black mt-0">-->
-<!--                Завантажуємо...-->
-<!--            </h2>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div wire:id="KZUDcUNTtNaNRRaB0145" x-data="Recall()" x-show="$store.app.formOpen === &#39;recall&#39;"-->
-<!--         class="relative" style="display: none;">-->
-<!--        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">-->
-<!--            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">-->
-<!--                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="title flex items-start mb-2">-->
-<!--            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button" class="mr-1 no-underline flex">-->
-<!--                <img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg" alt="">-->
-<!--            </a>-->
-<!--            <h2 class="font-neosans text-black mt-0">-->
-<!--                Завантажуємо...-->
-<!--            </h2>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div wire:id="tQ6iEhMdpuY5fVRxwvxO" x-data="VacancyCandidate()"-->
-<!--         x-show="$store.app.formOpen === &#39;vacancy-candidate&#39;" class="relative" style="display: none;">-->
-<!--        <div wire:loading.delay="wire:loading.delay"-->
-<!--             class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-10">-->
-<!--            <div class="flex items-center justify-center absolute top-0 left-0 right-0 bottom-0">-->
-<!--                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--</div>-->
-<!--<div>-->
-<!--    <div x-show="$store.app.modalOpen === &#39;subscription&#39;"-->
-<!--         class="fixed bg-main-blue px-1 py-2 container-subscribe-form " style="display: none;">-->
-
-<!--        <img loading="lazy" src="./inde_files/subscribe_form_onclinic.png" alt="Subscribe form"-->
-<!--             class="img-subscribe-form w-auto">-->
-<!--        <div id="close-icon" @click="closeModal()" class="close-icon esputnik-close-form">-->
-<!--            <span></span>-->
-<!--            <span></span>-->
-<!--        </div>-->
-<!--        <div class="block-form ">-->
-<!--            <h2 class="text-white mb-2 mt-0">-->
-<!--                <span class="font-bold">Чекліст зі здоров’я</span>-->
-<!--                <br>-->
-<!--                в подарунок за підписку!-->
-<!--            </h2>-->
-
-
-<!--            <div class="form-group">-->
-<!--                <input wire:model.defer="name" placeholder="Ваше ім&#39;я" class="">-->
-<!--            </div>-->
-<!--            <div class="form-group">-->
-<!--                <input wire:model.defer="email" placeholder="Ваш email" class="">-->
-<!--            </div>-->
-<!--            <button type="button" class="button olive" x-on:click="submit()">-->
-<!--                Підписатися-->
-<!--            </button>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-<!--<script src="./inde_files/livewire.js.download" data-turbo-eval="false" data-turbolinks-eval="false"></script>-->
-<!--<script data-turbo-eval="false" data-turbolinks-eval="false">window.livewire = new Livewire();-->
-<!--window.Livewire = window.livewire;-->
-<!--window.livewire_app_url = '';-->
-<!--window.livewire_token = 'HN8lbJz5knVj3TO1xYSqTFLBwdMvHQ6TOqeB0NYi';-->
-<!--window.deferLoadingAlpine = function (callback) {-->
-<!--    window.addEventListener('livewire:load', function () {-->
-<!--        callback();-->
-<!--    });-->
-<!--};-->
-<!--let started = false;-->
-<!--window.addEventListener('alpine:initializing', function () {-->
-<!--    if (!started) {-->
-<!--        window.livewire.start();-->
-<!--        started = true;-->
-<!--    }-->
-<!--});-->
-<!--document.addEventListener("DOMContentLoaded", function () {-->
-<!--    if (!started) {-->
-<!--        window.livewire.start();-->
-<!--        started = true;-->
-<!--    }-->
-<!--});</script>-->
-<!--<script defer="" src="./inde_files/manifest.js.download"></script>-->
-<!--<script defer="" src="./inde_files/vendor.js.download"></script>-->
-<!--<script defer="" src="./inde_files/app.js.download"></script>-->
-
-<div id="onclinic.ua"></div>
-<!--<script src="./inde_files/api.js.download"></script>-->
-<!--<script src="./inde_files/f9N4iNlmo9"></script>-->
-<div>
-    <div class="grecaptcha-badge" data-style="bottomright"
-         style="width: 256px; height: 60px; position: fixed; visibility: hidden; display: block; transition: right 0.3s ease 0s; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">
-        <div class="grecaptcha-logo">
-            <iframe title="reCAPTCHA" src="./inde_files/anchor.html" width="256" height="60" role="presentation"
-                    name="a-ymvxdo2y9x9j" frameborder="0" scrolling="no"
-                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
-        </div>
-        <div class="grecaptcha-error"></div>
-        <textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response"
-                  style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-    </div>
-    <iframe style="display: none;" src="./inde_files/saved_resource.html"></iframe>
-</div>
-<div id="jivo-iframe-container" style="opacity: 0; visibility: hidden; width: 0px; height: 0px; overflow: hidden;">
-</div>
 </body>
 </html>
