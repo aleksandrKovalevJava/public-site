@@ -30,6 +30,8 @@
 
             function getJson() {
 
+                console.log("certId = " + certId)
+                console.log("secret = " + secret)
                 document.getElementById("certId").innerHTML = certId;
                 document.getElementById("secret").innerHTML = secret;
 
@@ -191,7 +193,8 @@
         </div>
         <div class="mb-4 grid grid-cols-4">
             <iframe id="pdfIframe"
-                    style="display: none; width: 100%; height: 800px"></iframe>
+                    style="display: none; width: 100%; height: 800px">
+            </iframe>
         </div>
     </div>
     <div class="bg-gray-100 pt-1 relative tablet:sticky pb-1/2 z-20 form-bottom-sticky">
