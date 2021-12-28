@@ -46,7 +46,7 @@
                         }
                     })
                 })
-            };
+            }
         }
     </script>
 
@@ -191,11 +191,11 @@
 
             </div>
         </div>
-        <div class="mb-4 grid grid-cols-4">
+<!--        <div class="mb-4 grid grid-cols-4">-->
             <iframe id="pdfIframe"
                     style="display: none; width: 100%; height: 800px">
             </iframe>
-        </div>
+<!--        </div>-->
     </div>
     <div class="bg-gray-100 pt-1 relative tablet:sticky pb-1/2 z-20 form-bottom-sticky">
         <div class="content">
@@ -387,154 +387,154 @@
         </div>
     </div>
 </footer>
-<div class="form-modal modal-sidebar pt-2 pb-4 desktop:px-1 fixed h-screen"
-     @click.away="$store.app.recallOpen ? $store.app.recallOpen = null : $store.app.formOpen = null">
-    <div wire:id="De10n1dbu4ouNnN00YPe"
-         x-data="Appointment({state: window.Livewire.find(&#39;De10n1dbu4ouNnN00YPe&#39;).entangle(&#39;state&#39;)})"
-         x-show="$store.app.formOpen === &#39;appointment&#39;" class="relative pb-3 desktop:pb-1"
-         style="display: none;">
-        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">
-            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">
-                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>
-            </div>
-        </div>
-        <div class="title flex items-start mb-2">
-            <img @click="goBack()" role="button" class="mr-1 cursor-pointer h-2 w-auto" width="32" height="32"
-                 src="./inde_files/arrow-olive-back-modal.svg" alt="Назад">
-            <h2 class="font-neosans text-black mt-0">
-                Завантажуємо...
-            </h2>
-        </div>
-    </div>
-    <div wire:id="jfA7A1VszTeg5SpiD0B5" x-data="Question()" x-show="$store.app.formOpen === &#39;question&#39;"
-         class="relative" style="display: none;">
-        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">
-            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">
-                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>
-            </div>
-        </div>
-        <div class="title flex items-start mb-2">
-            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button"
-               class="mr-1 no-underline flex"><img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg"
-                                                   alt=""></a>
-            <h2 class="font-neosans text-black mt-0">
-                Завантажуємо...
-            </h2>
-        </div>
-    </div>
-    <div wire:id="2bOXnwGoDeoUjOK7K5Kf" x-data="Feedback()" x-show="$store.app.formOpen === &#39;feedback&#39;"
-         class="relative" style="display: none;">
-        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">
-            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">
-                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>
-            </div>
-        </div>
-        <div class="title flex items-start mb-2">
-            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button" class="mr-1 no-underline flex">
-                <img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg" alt="">
-            </a>
-            <h2 class="font-neosans text-black mt-0">
-                Завантажуємо...
-            </h2>
-        </div>
-    </div>
-    <div wire:id="enAlaTRqbmQwld0lyTjV" x-data="PriceClarification()"
-         x-show="$store.app.formOpen === &#39;price-clarification&#39;" class="relative" style="display: none;">
-        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">
-            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">
-                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>
-            </div>
-        </div>
-        <div class="title flex items-start mb-2">
-            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button"
-               class="mr-1 no-underline flex"><img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg"
-                                                   alt=""></a>
-            <h2 class="font-neosans text-black mt-0">
-                Завантажуємо...
-            </h2>
-        </div>
-    </div>
-    <div wire:id="KZUDcUNTtNaNRRaB0145" x-data="Recall()" x-show="$store.app.formOpen === &#39;recall&#39;"
-         class="relative" style="display: none;">
-        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">
-            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">
-                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>
-            </div>
-        </div>
-        <div class="title flex items-start mb-2">
-            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button" class="mr-1 no-underline flex">
-                <img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg" alt="">
-            </a>
-            <h2 class="font-neosans text-black mt-0">
-                Завантажуємо...
-            </h2>
-        </div>
-    </div>
-    <div wire:id="tQ6iEhMdpuY5fVRxwvxO" x-data="VacancyCandidate()"
-         x-show="$store.app.formOpen === &#39;vacancy-candidate&#39;" class="relative" style="display: none;">
-        <div wire:loading.delay="wire:loading.delay"
-             class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-10">
-            <div class="flex items-center justify-center absolute top-0 left-0 right-0 bottom-0">
-                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>
-                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>
-            </div>
-        </div>
-    </div>
+<!--<div class="form-modal modal-sidebar pt-2 pb-4 desktop:px-1 fixed h-screen"-->
+<!--     @click.away="$store.app.recallOpen ? $store.app.recallOpen = null : $store.app.formOpen = null">-->
+<!--    <div wire:id="De10n1dbu4ouNnN00YPe"-->
+<!--         x-data="Appointment({state: window.Livewire.find(&#39;De10n1dbu4ouNnN00YPe&#39;).entangle(&#39;state&#39;)})"-->
+<!--         x-show="$store.app.formOpen === &#39;appointment&#39;" class="relative pb-3 desktop:pb-1"-->
+<!--         style="display: none;">-->
+<!--        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">-->
+<!--            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">-->
+<!--                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="title flex items-start mb-2">-->
+<!--            <img @click="goBack()" role="button" class="mr-1 cursor-pointer h-2 w-auto" width="32" height="32"-->
+<!--                 src="./inde_files/arrow-olive-back-modal.svg" alt="Назад">-->
+<!--            <h2 class="font-neosans text-black mt-0">-->
+<!--                Завантажуємо...-->
+<!--            </h2>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div wire:id="jfA7A1VszTeg5SpiD0B5" x-data="Question()" x-show="$store.app.formOpen === &#39;question&#39;"-->
+<!--         class="relative" style="display: none;">-->
+<!--        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">-->
+<!--            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">-->
+<!--                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="title flex items-start mb-2">-->
+<!--            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button"-->
+<!--               class="mr-1 no-underline flex"><img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg"-->
+<!--                                                   alt=""></a>-->
+<!--            <h2 class="font-neosans text-black mt-0">-->
+<!--                Завантажуємо...-->
+<!--            </h2>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div wire:id="2bOXnwGoDeoUjOK7K5Kf" x-data="Feedback()" x-show="$store.app.formOpen === &#39;feedback&#39;"-->
+<!--         class="relative" style="display: none;">-->
+<!--        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">-->
+<!--            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">-->
+<!--                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="title flex items-start mb-2">-->
+<!--            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button" class="mr-1 no-underline flex">-->
+<!--                <img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg" alt="">-->
+<!--            </a>-->
+<!--            <h2 class="font-neosans text-black mt-0">-->
+<!--                Завантажуємо...-->
+<!--            </h2>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div wire:id="enAlaTRqbmQwld0lyTjV" x-data="PriceClarification()"-->
+<!--         x-show="$store.app.formOpen === &#39;price-clarification&#39;" class="relative" style="display: none;">-->
+<!--        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">-->
+<!--            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">-->
+<!--                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="title flex items-start mb-2">-->
+<!--            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button"-->
+<!--               class="mr-1 no-underline flex"><img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg"-->
+<!--                                                   alt=""></a>-->
+<!--            <h2 class="font-neosans text-black mt-0">-->
+<!--                Завантажуємо...-->
+<!--            </h2>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div wire:id="KZUDcUNTtNaNRRaB0145" x-data="Recall()" x-show="$store.app.formOpen === &#39;recall&#39;"-->
+<!--         class="relative" style="display: none;">-->
+<!--        <div wire:loading.delay="" class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-20 -mx-1">-->
+<!--            <div class="circle-loading-container flex items-center justify-center -mx-1 fixed top-0 left-0 right-0 bottom-0">-->
+<!--                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="title flex items-start mb-2">-->
+<!--            <a @click="$store.app.formOpen = null" wire:click="resetForm" role="button" class="mr-1 no-underline flex">-->
+<!--                <img width="1" height="1" src="./inde_files/arrow-olive-back-modal.svg" alt="">-->
+<!--            </a>-->
+<!--            <h2 class="font-neosans text-black mt-0">-->
+<!--                Завантажуємо...-->
+<!--            </h2>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div wire:id="tQ6iEhMdpuY5fVRxwvxO" x-data="VacancyCandidate()"-->
+<!--         x-show="$store.app.formOpen === &#39;vacancy-candidate&#39;" class="relative" style="display: none;">-->
+<!--        <div wire:loading.delay="wire:loading.delay"-->
+<!--             class="absolute top-0 right-0 bottom-0 left-0 bg-white bg-opacity-50 z-10">-->
+<!--            <div class="flex items-center justify-center absolute top-0 left-0 right-0 bottom-0">-->
+<!--                <div class="circle-1 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-2 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-3 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-4 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--                <div class="circle-5 circle-loading mx-1 bg-olive rounded-50"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-</div>
-<div>
-    <div x-show="$store.app.modalOpen === &#39;subscription&#39;"
-         class="fixed bg-main-blue px-1 py-2 container-subscribe-form " style="display: none;">
+<!--</div>-->
+<!--<div>-->
+<!--    <div x-show="$store.app.modalOpen === &#39;subscription&#39;"-->
+<!--         class="fixed bg-main-blue px-1 py-2 container-subscribe-form " style="display: none;">-->
 
-        <img loading="lazy" src="./inde_files/subscribe_form_onclinic.png" alt="Subscribe form"
-             class="img-subscribe-form w-auto">
-        <div id="close-icon" @click="closeModal()" class="close-icon esputnik-close-form">
-            <span></span>
-            <span></span>
-        </div>
-        <div class="block-form ">
-            <h2 class="text-white mb-2 mt-0">
-                <span class="font-bold">Чекліст зі здоров’я</span>
-                <br>
-                в подарунок за підписку!
-            </h2>
+<!--        <img loading="lazy" src="./inde_files/subscribe_form_onclinic.png" alt="Subscribe form"-->
+<!--             class="img-subscribe-form w-auto">-->
+<!--        <div id="close-icon" @click="closeModal()" class="close-icon esputnik-close-form">-->
+<!--            <span></span>-->
+<!--            <span></span>-->
+<!--        </div>-->
+<!--        <div class="block-form ">-->
+<!--            <h2 class="text-white mb-2 mt-0">-->
+<!--                <span class="font-bold">Чекліст зі здоров’я</span>-->
+<!--                <br>-->
+<!--                в подарунок за підписку!-->
+<!--            </h2>-->
 
 
-            <div class="form-group">
-                <input wire:model.defer="name" placeholder="Ваше ім&#39;я" class="">
-            </div>
-            <div class="form-group">
-                <input wire:model.defer="email" placeholder="Ваш email" class="">
-            </div>
-            <button type="button" class="button olive" x-on:click="submit()">
-                Підписатися
-            </button>
-        </div>
-    </div>
-</div>
+<!--            <div class="form-group">-->
+<!--                <input wire:model.defer="name" placeholder="Ваше ім&#39;я" class="">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <input wire:model.defer="email" placeholder="Ваш email" class="">-->
+<!--            </div>-->
+<!--            <button type="button" class="button olive" x-on:click="submit()">-->
+<!--                Підписатися-->
+<!--            </button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <!--<script src="./inde_files/livewire.js.download" data-turbo-eval="false" data-turbolinks-eval="false"></script>-->
 <!--<script data-turbo-eval="false" data-turbolinks-eval="false">window.livewire = new Livewire();-->
