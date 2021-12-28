@@ -6,7 +6,7 @@
     <title>Text JS</title>
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
-    <script type="text/javascript" src="data.json"></script>
+    <script type="text/javascript" src="js/data.json"></script>
     <script type="text/javascript">
 	var encryptedAES = CryptoJS.AES.encrypt("Message", "SecretPassphrase");
 	var decryptedBytes = CryptoJS.AES.decrypt(encryptedAES, "SecretPassphrase");
@@ -25,7 +25,7 @@
 			document.getElementById("certId").innerHTML = certId;
 			document.getElementById("secret").innerHTML = secret;
 
-			fetch("./data.json").then(response => response.json()).then(json => {
+			fetch("./js/data.json").then(response => response.json()).then(json => {
 				json.forEach(function(dataJson) {
 					if(dataJson[Object.keys(dataJson)[0]] == certId) {
 						var pdfData = dataJson[Object.keys(dataJson)[1]];
@@ -44,16 +44,16 @@
 <body>
 <h1>Hello!</h1>
 <br>
-<label>Actual Message</label> <b>
+<label>Actual Message:</label> <b>
     <div id="demo3"></div>
 </b>
 <br>
-<label>certId</label> <b>
+<label>certId:</label> <b>
     <div id="certId"></div>
 </b>
 <br>
 <br>
-<label>secret</label> <b>
+<label>my secret:</label> <b>
     <div id="secret"></div>
 </b>
 <br>
