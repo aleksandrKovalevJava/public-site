@@ -539,17 +539,6 @@ cite {
     width: 12px
 }
 
-.container-checkbox label:after {
-    background: url(/images/icon-checkbox.svg) no-repeat;
-    content: "";
-    display: none;
-    height: 6px;
-    left: 2px;
-    position: absolute;
-    top: 3px;
-    width: 9px
-}
-
 .container-checkbox label a {
     color: #1b6ebe;
     text-decoration: none
@@ -664,7 +653,7 @@ body {
     grid-template-rows: auto
 }
 
-@media (min-width: 992px) {
+@media (min-width: 3000px) {
     body {
         grid-template-areas: "aside header" "aside main" "aside footer";
         grid-template-columns: 14rem
@@ -726,17 +715,6 @@ nav ul li.dropdown {
     position: relative
 }
 
-nav ul li.dropdown:after {
-    background: url(/images/arrow-light-blue.svg);
-    content: "";
-    height: 9px;
-    position: absolute;
-    right: 8px;
-    top: 13px;
-    transform: scale(1);
-    width: 10px
-}
-
 nav ul li.dropdown.open {
     --tw-border-opacity: 1;
     --tw-bg-opacity: 1;
@@ -745,16 +723,6 @@ nav ul li.dropdown.open {
     border-color: rgba(12, 96, 176, var(--tw-border-opacity));
     border-top-width: 1px;
     transition: all .4s ease-in-out
-}
-
-nav ul li.dropdown.open:after {
-    background: url(/images/arrow-light-blue.svg);
-    content: "";
-    height: 9px;
-    position: absolute;
-    right: 8px;
-    top: 13px;
-    width: 10px
 }
 
 nav ul li.dropdown.open > div {
@@ -836,17 +804,6 @@ aside .logo-nav .logo-close .select-language .text {
 aside .logo-nav .logo-close .select-language .caret {
     margin-left: 14px;
     position: relative
-}
-
-aside .logo-nav .logo-close .select-language .caret:before {
-    background: url(/images/arrow-light-blue.svg) no-repeat 50%;
-    content: "";
-    display: block;
-    height: 9px;
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 10px
 }
 
 aside .logo-nav .logo-close .block-language {
@@ -1072,13 +1029,6 @@ a.department-item > div span {
     display: none
 }
 
-a.department-item.children > div {
-    background: #66b6fa url(/images/children-icons/pattern-department.svg) repeat-x 50%;
-    display: block;
-    min-height: 13rem;
-    width: 100%
-}
-
 a.department-item.children .background-olive {
     --tw-border-opacity: 1;
     border-color: rgba(27, 110, 190, var(--tw-border-opacity));
@@ -1096,9 +1046,6 @@ a.department-item.children:focus .background-olive, a.department-item.children:h
         position: relative
     }
 
-    a.department-item.children > div {
-        background: #66b6fa url(/images/children-icons/pattern-department.svg) no-repeat 50%
-    }
 }
 
 @media (min-width: 576px) {
@@ -1250,50 +1197,11 @@ a.article-item .overlay .info {
     height: 208px
 }
 
-.icon-reviews:before {
-    background: url(/images/icon-reviews.svg) no-repeat 50%;
-    background-size: cover;
-    content: "";
-    display: block;
-    height: 79px;
-    left: -8px;
-    position: absolute;
-    top: -6px;
-    width: 97px;
-    z-index: 0
-}
 
 .container-reviews {
     margin: 0 auto;
     max-width: 924px;
     padding: 0 10px
-}
-
-.container-reviews .icon-reviews:before {
-    background: url(/images/icon-reviews-mobile.svg) no-repeat 50%;
-    background-size: cover;
-    content: "";
-    display: block;
-    height: 26px;
-    left: 0;
-    position: relative;
-    width: 32px;
-    z-index: 0
-}
-
-@media (min-width: 992px) {
-    .container-reviews .icon-reviews:before {
-        background: url(/images/icon-reviews.svg) no-repeat 50%;
-        background-size: cover;
-        content: "";
-        display: block;
-        height: 96px;
-        left: -48px;
-        position: absolute;
-        top: -16px;
-        width: 118px;
-        z-index: 0
-    }
 }
 
 .container-reviews .reviews-item {
@@ -1305,18 +1213,6 @@ a.article-item .overlay .info {
     position: relative
 }
 
-.container-reviews .reviews-item.open .icon-open-answer:before {
-    background: url(/images/icon-open-answer.svg) no-repeat 50%;
-    background-size: cover;
-    content: "";
-    display: block;
-    height: 65px;
-    left: -24px;
-    position: absolute;
-    top: -16px;
-    width: 16px;
-    z-index: 0
-}
 
 .container-reviews .reviews-item .text-answer {
     margin-top: 16px
@@ -1526,23 +1422,6 @@ a.article-item .overlay .info {
     height: 95px;
     min-width: 95px;
     width: 95px
-}
-
-@media (min-width: 576px) {
-    .container-answer-question.open .icon-open:before {
-        background: url(/images/icon-open-answer-big.svg) no-repeat 50%;
-        background-size: cover;
-        content: "";
-        display: block;
-        height: 72px;
-        margin-bottom: -58px;
-        margin-top: -34px;
-        position: absolute;
-        transform: translateX(-8px) translateY(-16px);
-        transition: height .4s;
-        width: 19px;
-        z-index: 0
-    }
 }
 
 .container-careers-image .container-img {
@@ -1879,14 +1758,6 @@ a.article-item .overlay .info {
     min-width: 64px
 }
 
-.form-add-ask .icon-top {
-    background: url(/images/icon-form-ask.svg);
-    height: 64px;
-    right: 0;
-    top: 0;
-    width: 84px
-}
-
 .block-subscription .container-line {
     left: -1020px;
     position: absolute;
@@ -2196,48 +2067,12 @@ a.article-item .overlay .info {
     z-index: 300000
 }
 
-#jivo_custom_widget[data-language=ru] {
-    background-image: url(/images/jivosite/jivo_widget_offline_ru.png);
-    background-size: contain;
-    height: 198px
-}
-
-#jivo_custom_widget[data-language=en] {
-    background-image: url(/images/jivosite/jivo_widget_offline_en.png);
-    background-size: contain;
-    height: 151px
-}
-
-#jivo_custom_widget[data-language=uk] {
-    background-image: url(/images/jivosite/jivo_widget_offline_uk.png);
-    background-size: contain;
-    height: 215px
-}
-
 #jivo_custom_widget :hover {
     right: 0
 }
 
 #jivo_custom_widget.jivo_online {
     height: 178px
-}
-
-#jivo_custom_widget.jivo_online[data-language=ru] {
-    background-image: url(/images/jivosite/jivo_widget_online_ru.png);
-    background-size: contain;
-    height: 184px
-}
-
-#jivo_custom_widget.jivo_online[data-language=en] {
-    background-image: url(/images/jivosite/jivo_widget_online_en.png);
-    background-size: contain;
-    height: 160px
-}
-
-#jivo_custom_widget.jivo_online[data-language=uk] {
-    background-image: url(/images/jivosite/jivo_widget_online_uk.png);
-    background-size: contain;
-    height: 184px
 }
 
 .representatives-list img {
@@ -2284,7 +2119,7 @@ a.article-item .overlay .info {
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 3000px) {
     .modal-sidebar {
         left: 14rem;
         width: 22rem
@@ -2354,20 +2189,6 @@ a.article-item .overlay .info {
     display: none
 }
 
-@media (min-width: 992px) {
-    .cat-welcome {
-        background: url(/images/children-icons/cat-welcome.svg) no-repeat 50%;
-        display: block;
-        height: 205px;
-        position: absolute;
-        right: -100px;
-        top: -145px;
-        transform: rotate(5deg);
-        width: 280px;
-        z-index: 0
-    }
-}
-
 .container-for-cats {
     display: none
 }
@@ -2377,69 +2198,9 @@ a.article-item .overlay .info {
         display: block;
         position: relative
     }
-
-    .container-for-cats .fish {
-        background: url(/images/children-icons/fish.svg) no-repeat 50%;
-        height: 288px;
-        left: 0;
-        position: absolute;
-        top: 200px;
-        width: 110px
-    }
-
-    .container-for-cats .cat {
-        background: url(/images/children-icons/half-cat.svg) no-repeat 50%;
-        height: 230px;
-        left: -5px;
-        position: absolute;
-        top: 730px;
-        width: 110px
-    }
 }
 
-.bottom-image-cats {
-    background: url(/images/children-icons/cat_bottom_mobile.svg) no-repeat 50%;
-    background-size: cover;
-    display: block;
-    height: 0;
-    padding-bottom: 44.6153%;
-    width: 100%
-}
 
-@media (min-width: 992px) {
-    .bottom-image-cats {
-        background: url(/images/children-icons/Cats_bottom_main.svg) no-repeat 50%;
-        background-size: cover;
-        display: block;
-        height: 0;
-        padding-bottom: 25.33%;
-        width: 100%
-    }
-}
-
-.bottom-image-cats-services {
-    background: url(/images/children-icons/cat_bottom_mobile.svg) no-repeat 50%;
-    background-size: cover;
-    display: block;
-    height: 0;
-    padding-bottom: 44.6153%;
-    width: 100%
-}
-
-@media (min-width: 992px) {
-    .bottom-image-cats-services {
-        background: url(/images/children-icons/Cats-services.svg) no-repeat 50%;
-        background-size: cover;
-        display: block;
-        height: 0;
-        padding-bottom: 29.33%;
-        width: 100%
-    }
-}
-
-footer.children {
-    background: #3283c7 url(/images/children-icons/footer-pattern.svg)
-}
 
 .block-subscriptions-children {
     display: block;
@@ -2704,51 +2465,6 @@ footer.children {
     bottom: -1px
 }
 
-@font-face {
-    font-display: swap;
-    font-family: NeoSansPro;
-    font-style: normal;
-    font-weight: 300;
-    src: url(/assets/fonts/NeoSansPro-Light.eot);
-    src: url(/assets/fonts/NeoSansPro-Light.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/NeoSansPro-Light.woff2) format("woff2"), url(/assets/fonts/NeoSansPro-Light.woff) format("woff"), url(/assets/fonts/NeoSansPro-Light.ttf) format("truetype")
-}
-
-@font-face {
-    font-display: swap;
-    font-family: NeoSansPro;
-    font-style: normal;
-    font-weight: 500;
-    src: url(/assets/fonts/NeoSansPro-Medium.eot);
-    src: url(/assets/fonts/NeoSansPro-Medium.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/NeoSansPro-Medium.woff2) format("woff2"), url(/assets/fonts/NeoSansPro-Medium.woff) format("woff"), url(/assets/fonts/NeoSansPro-Medium.ttf) format("truetype")
-}
-
-@font-face {
-    font-display: swap;
-    font-family: NeoSansPro;
-    font-style: normal;
-    font-weight: 700;
-    src: url(/assets/fonts/NeoSansPro-Bold.eot);
-    src: url(/assets/fonts/NeoSansPro-Bold.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/NeoSansPro-Bold.woff2) format("woff2"), url(/assets/fonts/NeoSansPro-Bold.woff) format("woff"), url(/assets/fonts/NeoSansPro-Bold.ttf) format("truetype")
-}
-
-@font-face {
-    font-display: swap;
-    font-family: NeoSansPro;
-    font-style: italic;
-    font-weight: 400;
-    src: url(/assets/fonts/NeoSansPro-Italic.eot);
-    src: url(/assets/fonts/NeoSansPro-Italic.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/NeoSansPro-Italic.woff2) format("woff2"), url(/assets/fonts/NeoSansPro-Italic.woff) format("woff"), url(/assets/fonts/NeoSansPro-Italic.ttf) format("truetype")
-}
-
-@font-face {
-    font-display: swap;
-    font-family: NeoSansPro;
-    font-style: normal;
-    font-weight: 400;
-    src: url(/assets/fonts/NeoSansPro-Regular.eot);
-    src: url(/assets/fonts/NeoSansPro-Regular.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/NeoSansPro-Regular.woff2) format("woff2"), url(/assets/fonts/NeoSansPro-Regular.woff) format("woff"), url(/assets/fonts/NeoSansPro-Regular.ttf) format("truetype")
-}
-
 body, html {
     font-family: "PT Serif", sans-serif
 }
@@ -3010,11 +2726,6 @@ blockquote p {
 @media (min-width: 576px) {
     .dotted-overlay {
         padding: 2rem
-    }
-
-    .dotted-overlay.dotted:before {
-        background: linear-gradient(0deg, rgba(51, 51, 51, .5), rgba(51, 51, 51, .5)), url(/images/pattern-home-carousel.svg) repeat;
-        z-index: 0
     }
 }
 
@@ -3371,19 +3082,6 @@ https://flickity.metafizzy.co
 
 .choices[data-type*=select-one] .choices__item[data-value=""] .choices__button {
     display: none
-}
-
-.choices[data-type*=select-one]:after {
-    background: url(/images/arrow-blue.svg) no-repeat 50%;
-    border: none;
-    content: "";
-    height: 9px;
-    margin-top: -4.5px;
-    pointer-events: none;
-    position: absolute;
-    right: 11.5px;
-    top: 50%;
-    width: 9px
 }
 
 .choices[data-type*=select-one].is-open:after {
@@ -6151,25 +5849,13 @@ span.flatpickr-weekday {
     height: 15px
 }
 
-@media (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
-    .iti__flag {
-        background-image: url(../img/flags@2x.png)
-    }
-}
+
 
 .iti__flag.iti__np {
     background-color: transparent
 }
 
-.iti__flag {
-    background-image: url(/images/flags.png)
-}
 
-@media (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
-    .iti__flag {
-        background-image: url(/images/flags@2x.png)
-    }
-}
 
 .home-carousel .carousel-cell {
     width: 100%
@@ -8293,10 +7979,10 @@ span.flatpickr-weekday {
         margin-right: 4rem
     }
 
-    .desktop\:-mx-1\/4 {
-        margin-left: -.25rem;
-        margin-right: -.25rem
-    }
+    /*.desktop\:-mx-1\/4 {*/
+    /*    margin-left: -.25rem;*/
+    /*    margin-right: -.25rem*/
+    /*}*/
 
     .desktop\:my-4 {
         margin-bottom: 4rem;

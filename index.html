@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<html lang="uk" prefix="og: http://ogp.me/ns#">
+<html lang="uk">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <meta name="locale" content="ua_UA">
+    <meta name="robots" content="noindex, follow">
+
+    <title>Результати аналізів — медична лабораторія ОН Лаб</title>
+
+    <!--  script  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
-    <script type="text/javascript" src="js/data.json"></script>
+    <script type="application/json" src="js/data.json"></script>
     <script type="text/javascript">
         var encryptedAES = CryptoJS.AES.encrypt("Message", "SecretPassphrase");
         var decryptedBytes = CryptoJS.AES.decrypt(encryptedAES, "SecretPassphrase");
-        // get full URL and parse pat params: http://localhost:8080/?certId=1&secret=SecretPassphrase
+        // get full URL and parse pat params: http://site.com?certId=1&secret=SecretPassphrase
         var url = new URL(window.location.href);
         var certId = url.searchParams.get("certId");
         var secret = url.searchParams.get("secret");
         // update inner HTML
         window.onload = function () {
-            getJson();
+            initJsonData();
 
-            function getJson() {
-                console.log("certId = " + certId)
-                console.log("secret = " + secret)
+            function initJsonData() {
                 document.getElementById("certId").value = certId;
-                // document.getElementById("mytext").value = "My value";
-
-                // document.getElementById("secret").innerHTML = secret;
                 fetch("./js/data.json").then(response => response.json()).then(json => {
                     json.forEach(function (dataJson) {
                         if (dataJson[Object.keys(dataJson)[0]] == certId) {
@@ -37,65 +39,15 @@
         }
     </script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
-    <meta name="recaptcha_sitekey" content="6LeEPsMUAAAAACHzo0AOJsiIJjlGLVwsijy6ELKZ">
-    <meta name="csrf-token" content="HN8lbJz5knVj3TO1xYSqTFLBwdMvHQ6TOqeB0NYi">
-    <title>Результати аналізів — медична лабораторія ОН Лаб</title>
-    <meta name="description"
-          content="Перевірити результати лабораторних аналізів і досліджень — медична лабораторія ОН Лаб">
-    <meta name="keywords"
-          content="результати аналізів, лабораторні аналізи, медична лабораторія, отримати результати аналізів">
-    <meta name="image" content="https://onclinic.ua/images/logo_onclinic.png">
-    <meta name="locale" content="ua_UA">
-    <link rel="canonical" href="https://onclinic.ua/test-verification.html">
-    <meta name="robots" content="noindex, follow">
-    <!--    <script type="application/ld+json">{-->
-    <!--        "@context": "https://schema.org",-->
-    <!--        "@type": "WebPage"-->
-    <!--    }</script>-->
+    <!--  link  -->
+    <link rel="shortcut icon" href="./img/favicon.png">
     <link rel="preload" href="./inde_files/placeholders.css" as="style">
     <link rel="stylesheet" href="./inde_files/placeholders.css">
     <link rel="stylesheet" href="./inde_files/app.css">
     <link rel="stylesheet preload" as="style"
           href="https://fonts.googleapis.com/css?family=PT+Serif|Roboto:400,500&amp;subset=cyrillic,cyrillic-ext,latin-ext&amp;display=swap">
-
-    <link rel="shortcut icon" href="https://onclinic.ua/favicon.png">
-
-    <style>[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {
-        display: none;
-    }
-
-    [wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {
-        display: none;
-    }
-
-    [wire\:offline] {
-        display: none;
-    }
-
-    [wire\:dirty]:not(textarea):not(input):not(select) {
-        display: none;
-    }
-
-    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
-        animation-duration: 50000s;
-        animation-name: livewireautofill;
-    }
-
-    @keyframes livewireautofill {
-        from {
-        }
-    }</style>
 </head>
 <body id="layout" class="relative grid">
-<!--        x-data="App()" :class="{-->
-<!--      &#39;sidebar-open&#39;: $store.app.sidebarOpen,-->
-<!--      &#39;blurred&#39;: $store.app.formOpen || $store.app.modalOpen,-->
-<!--      &#39;modal-open&#39;: $store.app.modalOpen,-->
-<!--      &#39;form-open&#39;: $store.app.formOpen,-->
-<!--      }" -->
-<!--id="layout" class="relative grid">-->
-
 <header
         class="grid bg-main-blue px-3/4 tablet:px-1 text-white z-20 sticky border-b-1 border-dark-blue box-border text-center px-1 desktop:px-1">
     <div class="flex items-center">
@@ -116,24 +68,24 @@
             Вакцинація
         </a>
         <a href="https://www.tiktok.com/@onclinic.ua?_d=secCgYIASAHKAESMgowBwlu09jEus%2Fyo9bKRJ7n5kvbNcHiTnZw%2FilAFeIGzz6uwgwfNGzHp6urR30yQVR5GgA%3D&amp;language=ru&amp;sec_uid=MS4wLjABAAAAE8o-nhYl-8TGM_e9UQjQhJLFxDal2PO3sVSFINfCV3_a9jTiLI2CTwBQ-Cq9JHVj&amp;sec_user_id=MS4wLjABAAAAuyfcItXAh3SSz21TmgK0coO2chKrrfX6Qc5I-tI-KQAxpZ4CIyeQOKZDar81VKNt&amp;share_app_name=musically&amp;share_author_id=6811085572289332230&amp;share_link_id=746827b1-a326-480b-b683-54f78ffcbdc8&amp;timestamp=1614853713&amp;u_code=dacmfe99114cck&amp;am"
-           target="_blank" class="mx-1/4 hidden desktop:flex">
-            <img width="1" height="1" src="./inde_files/icon-tiktok.svg" alt="">
-        </a>
-        <a href="https://www.instagram.com/onclinic.ua/?hl=ru" target="_blank" class="mx-1/4 hidden desktop:flex">
-            <img width="1" height="1" src="./inde_files/icon-insta.svg" alt="">
-        </a>
-        <a href="https://t.me/onclinic_medycyna_tut" target="_blank" class="mx-1/4 hidden desktop:flex">
-            <img width="1" height="1" src="./inde_files/icon-telegramm.svg" alt="">
-        </a>
-        <a href="https://www.youtube.com/user/onclinicsu" target="_blank" class="mx-1/4 hidden desktop:flex">
-            <img width="1" height="1" src="./inde_files/icon-youtube.svg" alt="">
-        </a>
-        <a href="https://www.facebook.com/onclinic.ua" target="_blank" class="mx-1/4 hidden desktop:flex">
-            <img width="1" height="1" src="./inde_files/icon-facebook.svg" alt="">
-        </a>
-        <a href="https://mycabinet.info/" target="_blank" class="ml-1/4 flex desktop:hidden ">
-            <img width="1" height="1" src="./inde_files/personal-cabinet.svg" alt="">
-        </a>
+               target="_blank" class="mx-1/4 hidden desktop:flex">
+                <img width="1" height="1" src="./inde_files/icon-tiktok.svg" alt="">
+            </a>
+            <a href="https://www.instagram.com/onclinic.ua/?hl=ru" target="_blank" class="mx-1/4 hidden desktop:flex">
+                <img width="1" height="1" src="./inde_files/icon-insta.svg" alt="">
+            </a>
+            <a href="https://t.me/onclinic_medycyna_tut" target="_blank" class="mx-1/4 hidden desktop:flex">
+                <img width="1" height="1" src="./inde_files/icon-telegramm.svg" alt="">
+            </a>
+            <a href="https://www.youtube.com/user/onclinicsu" target="_blank" class="mx-1/4 hidden desktop:flex">
+                <img width="1" height="1" src="./inde_files/icon-youtube.svg" alt="">
+            </a>
+            <a href="https://www.facebook.com/onclinic.ua" target="_blank" class="mx-1/4 hidden desktop:flex">
+                <img width="1" height="1" src="./inde_files/icon-facebook.svg" alt="">
+            </a>
+            <a href="https://mycabinet.info/" target="_blank" class="ml-1/4 flex desktop:hidden ">
+                <img width="1" height="1" src="./inde_files/personal-cabinet.svg" alt="">
+            </a>
     </div>
 </header>
 <main class="bg-white relative" id="page">
@@ -179,11 +131,9 @@
 
             </div>
         </div>
-        <!--        <div class="mb-4 grid grid-cols-4">-->
         <iframe id="pdfIframe"
-                style="display: none; width: 100%; height: 800px">
+                style="display: none; width: 100%; height: 800px; padding-bottom: 30px;">
         </iframe>
-        <!--        </div>-->
     </div>
     <div class="bg-gray-100 pt-1 relative tablet:sticky pb-1/2 z-20 form-bottom-sticky">
         <div class="content">
@@ -208,39 +158,6 @@
     </div>
 </main>
 <footer class="bg-main-blue z-10 desktop:pb-2 pb-1">
-    <div class="social-links tablet:hidden pt-30 pb-20">
-        <div class="content">
-            <div class="text-center text-3/4 leading-1 text-white font-neosans pt-1">
-                Ділимося порадами, пишемо статті про здоров'я, розповідаємо про нововведення в медицині. Приєднуйтесь до
-                нас в:
-            </div>
-            <div class="link grid grid-cols-5 gap-1/2 pt-1">
-                <a href="https://www.facebook.com/onclinic.ua"
-                   class=" bg-olive flex justify-center items-center rounded-3">
-                    <img width="1" height="1" src="./inde_files/f-icon-facebook.svg" alt="" class="w-auto"
-                         loading="lazy">
-                </a>
-                <a href="https://www.instagram.com/onclinic.ua/?hl=ru"
-                   class="bg-olive flex justify-center items-center rounded-3">
-                    <img width="1" height="1" src="./inde_files/f-icon-insta.svg" alt="" class="w-auto" loading="lazy">
-                </a>
-                <a href="https://t.me/onclinic_medycyna_tut"
-                   class="bg-olive flex justify-center items-center rounded-3">
-                    <img width="1" height="1" src="./inde_files/f-icon-telegram.svg" alt="" class="w-auto"
-                         loading="lazy">
-                </a>
-                <a href="https://www.youtube.com/user/onclinicsu"
-                   class="bg-olive flex justify-center items-center rounded-3">
-                    <img width="1" height="1" src="./inde_files/f-icon-youtube.svg" alt="" class="w-auto"
-                         loading="lazy">
-                </a>
-                <a href="https://www.tiktok.com/@onclinic.ua?_d=secCgYIASAHKAESMgowBwlu09jEus%2Fyo9bKRJ7n5kvbNcHiTnZw%2FilAFeIGzz6uwgwfNGzHp6urR30yQVR5GgA%3D&amp;language=ru&amp;sec_uid=MS4wLjABAAAAE8o-nhYl-8TGM_e9UQjQhJLFxDal2PO3sVSFINfCV3_a9jTiLI2CTwBQ-Cq9JHVj&amp;sec_user_id=MS4wLjABAAAAuyfcItXAh3SSz21TmgK0coO2chKrrfX6Qc5I-tI-KQAxpZ4CIyeQOKZDar81VKNt&amp;share_app_name=musically&amp;share_author_id=6811085572289332230&amp;share_link_id=746827b1-a326-480b-b683-54f78ffcbdc8&amp;timestamp=1614853713&amp;u_code=dacmfe99114cck&amp;am"
-                   class=" bg-olive flex justify-center items-center rounded-3">
-                    <img width="1" height="1" src="./inde_files/icon-tiktok.svg" alt="" class="w-auto" loading="lazy">
-                </a>
-            </div>
-        </div>
-    </div>
     <div class="content">
         <div class="footer-top-links grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 py-1">
             <div>
